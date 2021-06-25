@@ -1,0 +1,10 @@
+.settings {
+    /* background-image: url('Settings.png'); */
+    /* background-color: blueviolet; */
+    height: auto;
+    width: auto;
+    display: block;
+    background-position: 'center';
+    background-size: 'cover';
+    background-repeat: 'no-repeat';
+}

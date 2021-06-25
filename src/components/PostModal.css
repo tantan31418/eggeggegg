@@ -1,0 +1,18 @@
+  .record_a {
+    transition: all 200ms ease-in;
+    color: #5db9ff;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .record_a:hover {
+    color: #239da8;
+  }
+  .record_a:active {
+    color: #555;
+  }
+  .record_a:focus {
+    outline: none;
+  }
+  .modall {
+      background-color: blueviolet;
+  }
