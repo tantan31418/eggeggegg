@@ -1,0 +1,41 @@
+.text p {
+    font-family:  "Noto Sans TC","Arial","Microsoft YaHei","黑體","宋體",sans-serif;
+    /*  'Montserrat', "Microsoft Yahei", "Noto Sans CJK SC", 'Noto Sans TC', "Droid Sans Fallback";*/
+    letter-spacing: 0.15rem;
+    color:slateblue;
+    font-size: 1.3rem;
+    font-weight:bold;
+}
+/* .text {
+    border-style: solid;
+    border-color: darkorchid;
+    border-width: 0.1rem;
+} */
+/* .sleepani {
+    width: 20rem;
+} */
+.hammer img{
+    /* border-style: solid;
+    border-color: darkorchid;
+    border-width: 0.1rem; */
+
+    width: 4.5rem;
+    height: 4.2rem;
+    margin-right: 2rem;
+    margin-top: auto;
+}
+.hammer img:hover {
+    width: 5rem;
+    height: 4.7rem;
+}
+.choose img {
+    width: 7.5rem;
+    /* height: 7.7rem; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+}
+#hammer {
+    width: 7.5rem;
+    height: 7.2rem;
+}

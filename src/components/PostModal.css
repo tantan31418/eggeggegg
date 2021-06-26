@@ -4,6 +4,21 @@
     cursor: pointer;
     text-decoration: none;
   }
+  .blank-up {
+    margin-top: 2rem;
+  }
+  .blank-down {
+    margin-bottom: 10rem;
+  }
+  .record_a div {
+    font-size: 1.1rem;
+    /* color: rgba(44, 43, 43, 0.877); */
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    font-family: "Microsoft YaHei","黑體","宋體",sans-serif;
+    /* margin-top: -1rem;
+    margin-bottom: -1rem; */
+  }
   .record_a:hover {
     color: #239da8;
   }

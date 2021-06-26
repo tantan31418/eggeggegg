@@ -1,0 +1,13 @@
+.scoreboard{
+    margin-top: -0.8rem;
+    margin-bottom: -0.8rem;
+
+    /* border-style: solid; */
+    border-color: darkorchid;
+    border-width: 0.1rem;
+}
+.scoreboard p {
+    font-family:  "Microsoft YaHei","黑體","宋體",sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+}

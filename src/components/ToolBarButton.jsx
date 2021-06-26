@@ -19,15 +19,12 @@ export default class ToolBarButton extends React.Component{
 
     render(){
         return (
-            <div>
-                <div className="settings">
-                    {this.props.buttonType}
-                    {/* <img src={`${this.props.buttonType}.png`} /> */}
-                    <Link
-                        to="/settings"
-                        className="settings"
-                    >
-                        <img src={`${this.props.buttonType}.png`} style={{width:100,height:100}}/>
+            <div className='d-flex'>
+                <div className='d-inline-flex button'>
+                    {/* {this.props.buttonType} */}
+                    <Link to={`/${this.props.buttonType}`}>
+                        {/* "/settings" */}
+                        <img src={`${this.props.buttonType}.png`}/>
                     </Link>
                 </div>
             </div>

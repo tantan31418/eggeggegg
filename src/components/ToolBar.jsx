@@ -18,11 +18,14 @@ export default class ToolBar extends React.Component{
     render(){
         return (
             <div>
+                <div className="d-flex justify-content-between">
                 <ToolBarButton buttonType="Settings"/>
+                <KillButton/>
+                </div>
                 <ToolBarButton buttonType="Collection"/>
                 <ToolBarButton buttonType="RIP"/>
                 <ToolBarButton buttonType="Calendar"/>
-                <KillButton/>
+                
             </div>
         
         );

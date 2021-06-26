@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './TdRcCount.css'
 
 
 // Today Record Count -- 0/3 -> 3/3
@@ -14,7 +15,7 @@ export default class TdRcCount extends React.Component{
     
     render(){
         return (
-        <div>
+        <div className='count d-flex justify-content-center'>
             <p><span>{this.props.count}</span><span>/3</span></p>
         </div>
         );
