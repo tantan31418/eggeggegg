@@ -4,11 +4,7 @@
     border-style: solid; */
     height: 10rem;
 }
-/* .table {
-    position: relative;
-} */
 .table img {
-    /* position: absolute; */
     height: 8rem;
     margin-top: 4rem;
     margin-bottom: 3rem;
@@ -32,3 +28,36 @@
     margin-top: -1.1rem; 
     z-index: 1;
 }
+.collect-border {
+    border-color: rgb(40, 82, 117);
+    border-width: 0.15rem;
+    border-style: solid;
+    border-radius: 1.5rem;
+    background-color:wheat;
+    width: 18rem;
+    height: 23rem;
+}
+.collect-border span {
+    position: relative;
+    left: 1rem;
+    right: auto;
+    
+}
+.collect-border img {
+    height:auto;
+    width: 16.5rem;
+}
+.collect-number{
+    color: rgb(30, 67, 97);
+    font-size: 1.8rem;
+    font-family: "Microsoft YaHei","黑體","宋體",sans-serif;
+    margin-top: 0.4rem;
+    /* margin-left: -1rem; */
+}
+.rs-modal-wrapper, .rs-modal {
+    margin-top: 8rem;
+    margin-bottom: auto;
+ }
+/* .rs-modal-open .rs-modal-has-backdrop.rs-modal-wrapper .rs-modal .rs-modal-dialog .rs-modal-content .rs-modal-body {
+    max-height: 516px;
+} */

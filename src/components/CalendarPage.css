@@ -2,7 +2,7 @@
     width: 100%;
     border-collapse: collapse;
 }
-#calendar_table {
+.calendar_table {
     /* border-color: rebeccapurple;
     border-width: 0.1rem;
     border-style: solid; */
@@ -11,13 +11,13 @@
     font-size:1.0rem; 
     width:100%;    
 }
-td {
+.calendar_table td {
     
     height: 5rem;
     text-align:center;
     background-color: #eee;    
 }
-tr {
+.calendar_table tr {
     border-bottom: solid 2px white;
     
 }

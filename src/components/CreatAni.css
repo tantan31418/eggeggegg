@@ -1,0 +1,39 @@
+.blackani {
+    /* border-color: teal;
+    border-width: 0.3rem;
+    border-style: solid; */
+    padding-top: 1.5rem;
+}
+.blackani img {
+    margin-top: 0%;
+}
+#black_bear {
+    width: 10rem;
+    height: 12rem;
+
+    /* border-color: red;
+    border-width: 0.3rem;
+    border-style: solid; */
+}
+#black_dino {
+    width: 15rem;
+    height: 12rem;
+}
+#black_cat {
+    width: 10rem;
+}
+#create_table {
+    /* border-color: rebeccapurple;
+    border-width: 0.1rem;
+    border-style: solid; */
+
+    font-family: 'Microsoft YaHei','SimSun', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif; 
+    font-size:1.0rem; 
+    width:100%;    
+}
+.blackani td {
+    width: 30%;
+    height: 5rem;
+    text-align:center;
+     
+}
