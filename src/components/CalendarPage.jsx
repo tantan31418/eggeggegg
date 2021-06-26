@@ -4,6 +4,7 @@ import { Calendar } from 'rsuite';
 import HomeButton from './HomeButton';
 import {Button, Modal, ControlLabel, HelpBlock } from 'rsuite';
 import PropTypes from 'prop-types';
+import './CalendarPage.css';
 
 
 export default class CalendarPage extends React.Component{
@@ -27,31 +28,32 @@ export default class CalendarPage extends React.Component{
         return (
             <div>
                 Calendar
-                <HomeButton/>
-                <div className='d-flex justify-content-center'>
-                    <Calendar onChange={this.handleShow}/>
-                </div>
-                <div>
-                    <Modal show={this.state.show} onHide={this.handleClose}>
-                        {/* <Modal.Header closeButton>
-                <Modal.Title>Kill or Not</Modal.Title>
-            </Modal.Header> */}
+                <HomeButton/>                
+                    <div className='d-flex justify-content-center calendar'>
+                        <Calendar style={{ width: "40rem" }} onChange={this.handleShow}/>
+                    </div>
+                <div className='modal_calendar'>
+                    <Modal size='xs' show={this.state.show} onHide={this.handleClose}>
+                        <Modal.Header closeButton>
+                            {/* <Modal.Title>10/20</Modal.Title> */}
+                        </Modal.Header>
                         <Modal.Body>
-                            {/* <div className="d-flex text"><p>要放棄這顆蛋嗎...</p></div> */}
-                            {/* <div className="d-flex justify-content-center sleepani"><SleepAni/></div> */}
-                            {/* <div className="d-flex justify-content-between">
-                    <img src='cancel.png'/>
-                    <img src='hammer.png'/>
-                </div> */}
+                            <table id='calendar_table'>
+                                <tr>
+                                    <td id='td1'>電電過了✧*｡٩(ˊᗜˋ*)و✧*｡</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td id='td1'>訓練台可以用了(ง๑ •̀_•́)ง</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td id='td1'>要放暑假了｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡</td>
+                                    <td>7</td>
+                                </tr>
+                            </table>
                         </Modal.Body>
-                        <Modal.Footer>
-                            {/* <Button variant="secondary" onClick={this.handleClose}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick={this.handleClose}>
-                    Save Changes
-                </Button> */}
-                            
+                        <Modal.Footer>                        
                         </Modal.Footer>
                     </Modal>
                 </div>

@@ -1,0 +1,36 @@
+.modal_calendar table{
+    width: 100%;
+    border-collapse: collapse;
+}
+#calendar_table {
+    /* border-color: rebeccapurple;
+    border-width: 0.1rem;
+    border-style: solid; */
+
+    font-family: 'Microsoft YaHei','SimSun', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif; 
+    font-size:1.0rem; 
+    width:100%;    
+}
+td {
+    
+    height: 5rem;
+    text-align:center;
+    background-color: #eee;    
+}
+tr {
+    border-bottom: solid 2px white;
+    
+}
+#td1 {
+    /* top: 0.6rem; */
+    padding-left: 0.6rem;
+    width: 80%;
+    text-align: start;
+    background-color: #7bc4d6;
+    color: white;
+    border-bottom: white;
+}
+.calendar {
+    margin-top: -2.5rem;
+}
+.react-datepicker-wrapper, .react-datepicker__input-container { display: block !important; }

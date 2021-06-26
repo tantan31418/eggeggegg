@@ -5,6 +5,7 @@ export default class SettingPage extends React.Component{
         return (
         <div>
             SettingPage
+            <HomeButton/>
         </div>
         );
     }
