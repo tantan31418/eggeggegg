@@ -33,7 +33,7 @@ export default class CalendarPage extends React.Component{
                         <Calendar style={{ width: "40rem" }} onChange={this.handleShow}/>
                     </div>
                 <div className='modal_calendar'>
-                    <Modal size='xs' show={this.state.show} onHide={this.handleClose}>
+                    <Modal size='xs' show={this.state.show} onHide={this.handleClose} position='absolute'>
                         <Modal.Header closeButton>
                             {/* <Modal.Title>10/20</Modal.Title> */}
                         </Modal.Header>

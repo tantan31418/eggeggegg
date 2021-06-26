@@ -34,3 +34,9 @@ tr {
     margin-top: -2.5rem;
 }
 .react-datepicker-wrapper, .react-datepicker__input-container { display: block !important; }
+
+.rs-modal-wrapper, .rs-modal {
+    margin-top: 8rem;
+    margin-bottom: auto;
+    
+ }

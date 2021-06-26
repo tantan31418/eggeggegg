@@ -64,7 +64,7 @@ export default class PostModal extends React.Component{
 
                 <Modal  show={this.state.show} onHide={this.handleClose} size="sm">
                     <Modal.Header>
-                        <Modal.Title>New User</Modal.Title>
+                        <Modal.Title>New Happy</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form
