@@ -10,7 +10,8 @@ import RIPPage from './RIPPage.jsx';
 import LoginPage from './LoginPage.jsx';
 import CalendarPage from './CalendarPage.jsx';
 
-import {getUser as getUserFromApi} from '../api/getUser.js';
+// import {getUser as getUserFromApi} from '../api/getUser.js';
+import {list as getUserFromApi} from '../api/user.js';
 
 
 
@@ -50,11 +51,20 @@ export default class Main extends React.Component {
   getUser(){
     console.log('call user api');
     console.log('call getUser()');
-    let user_data = getUserFromApi();
+    // let user_data = getUserFromApi(66);
     // console.log(user_data['user_data']);
-    this.setState({user_data});
-    console.log('getusersetstate');
-    console.log(this.state);
+    // this.setState({user_data});
+    getUserFromApi(66)
+      .then(
+        (user_data) => {
+          // console.log(res.data);
+          console.log(user_data[0]);
+          this.setState({user_data:{...user_data[0]}});
+          console.log('getusersetstate');
+          console.log(this.state);
+        }
+      );
+    
     // getUserFromApi()
     //   .then((user) => {
     //     this.setState({

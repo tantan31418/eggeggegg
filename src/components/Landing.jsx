@@ -2,6 +2,7 @@ import React from 'react';
 
 import ToolBar from '../components/ToolBar.jsx';
 import EggHero from '../components/EggHero.jsx';
+import CreateAni from '../components/CreateAni.jsx';
 import TdRcCount from '../components/TdRcCount.jsx';
 import ScoreBoard from '../components/ScoreBoard.jsx';
 import PostModal from './PostModal.jsx';
@@ -41,8 +42,8 @@ export default class Landing extends React.Component{
                     <p id='think'>想不到開心的事嗎？</p>
                     {/* <button onClick={this.props.foo_update}>foo update</button> */}
                     <a href="/other_happy">看看別人因為什麼感到開心...</a>
-                    <EggHero/>
-                    <TdRcCount count={2}/>
+                    {this.props.cannewanimal ? <CreateAni/>: <EggHero/>}
+                    <TdRcCount count={this.props.dailynote}/>
                     <div className="d-flex justify-content-center"><PostModal/></div>
                     
                     <ScoreBoard todaysscore={this.props.todaysscore} weeklyscore={this.props.weeklyscore} 

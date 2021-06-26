@@ -1,7 +1,7 @@
 import React from 'react';
 // import { BrowserRouter as Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import './EggHero.css'
+import './EggHero.css';
 
 export default class EggHero extends React.Component{
     render(){
