@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 // Develop server URL
-let url = 'http://http://happy-monster-dev.ap-northeast-1.elasticbeanstalk.com/api/systems';
+const baseurl = 'http://http://happy-monster-dev.ap-northeast-1.elasticbeanstalk.com/api/systems';
 
 // Staging server URL
 // const postBaseUrl = 'http://weathermood-staging.us-west-2.elasticbeanstalk.com/api';
@@ -13,10 +13,10 @@ let url = 'http://http://happy-monster-dev.ap-northeast-1.elasticbeanstalk.com/a
 
 function update() {
 //      const userid = 66, species = 'cat';
-    console.log(`Making POST request to: ${url}`);
+    console.log(`Making POST request to: ${baseurl}`);
 
     return axios
-    .post(url, {})
+    .post(baseurl, {})
     .then(function (res) {
         if (res.status !== 200)
         throw new Error(`Unexpected response code: ${res.status}`);

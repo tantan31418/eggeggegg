@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 // Develop server URL
-let url = 'http://happy-monster-dev.ap-northeast-1.elasticbeanstalk.com/api/posts';
+const baseurl = 'http://happy-monster-dev.ap-northeast-1.elasticbeanstalk.com/api/posts';
 
 // Staging server URL
 // const postBaseUrl = 'http://weathermood-staging.us-west-2.elasticbeanstalk.com/api';
@@ -11,6 +11,7 @@ let url = 'http://happy-monster-dev.ap-northeast-1.elasticbeanstalk.com/api/post
 
 
 function list(id, whose = '') {
+    let url = baseurl;
     let query = [];
     if (id) query.push(`id=${id}`);
     if (whose) query.push(`whose=${whose}`);
@@ -27,10 +28,10 @@ function list(id, whose = '') {
 
 
 function update(postid, text){
-    console.log(`Making POST request to: ${url + "/update"}`);
+    console.log(`Making POST request to: ${baseurl + "/update"}`);
 
     return axios
-    .post(url + "/update", {
+    .post(baseurl + "/update", {
         postid,
         text,
     })
@@ -43,10 +44,10 @@ function update(postid, text){
 }
 
 function create(uid, score, text){
-    console.log(`Making POST request to: ${url}`);
+    console.log(`Making POST request to: ${baseurl}`);
 
     return axios
-    .post(url, {
+    .post(baseurl, {
         uid,
         score,
         text,

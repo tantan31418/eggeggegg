@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 // Develop server URL
-let url = 'http://happy-monster-dev.ap-northeast-1.elasticbeanstalk.com/api/animals';
+const baseurl = 'http://happy-monster-dev.ap-northeast-1.elasticbeanstalk.com/api/animals';
 
 // Staging server URL
 // const postBaseUrl = 'http://weathermood-staging.us-west-2.elasticbeanstalk.com/api';
@@ -12,6 +12,7 @@ let url = 'http://happy-monster-dev.ap-northeast-1.elasticbeanstalk.com/api/anim
 
 function list(id, species = '', status = ''){
 //      const id = 48, species = '', status='';
+    let url = baseurl;
     let query = [];
     if (id) query.push(`id=${id}`);
     if (species) query.push(`species=${species}`);
@@ -29,10 +30,10 @@ function list(id, species = '', status = ''){
 
 function create(userid, species) {
 //      const userid = 66, species = 'cat';
-    console.log(`Making POST request to: ${url}`);
+    console.log(`Making POST request to: ${baseurl}`);
 
     return axios
-    .post(url, {
+    .post(baseurl, {
         userid,
         species
     })
@@ -47,7 +48,7 @@ function create(userid, species) {
     
 function update(aid, update) {
 //      const aid = 56, update = 'death';
-    const updateUrl = url + '/update';
+    const updateUrl = baseurl + '/update';
     console.log(`Making POST request to: ${updateUrl}`);
 
     return axios
