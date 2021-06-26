@@ -22,7 +22,7 @@ export default class Main extends React.Component {
       user_id : "1",
       user_data : {
         
-          "id": 0,
+          "id": 66,
           "name": "hello",
           "current_animal": "dino",
           "createday":'1624357600',
@@ -105,7 +105,7 @@ export default class Main extends React.Component {
             exact
             path="/other_happy"
             render={() => (
-              <OtherHappy
+              <OtherHappy id={this.state.user_data.id}
               />
             )}
           />
