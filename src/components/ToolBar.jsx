@@ -18,10 +18,10 @@ export default class ToolBar extends React.Component{
     render(){
         return (
             <div>
-                <ToolBarButton buttonType="Settings"/>
-                <ToolBarButton buttonType="Collection"/>
-                <ToolBarButton buttonType="RIP"/>
-                <ToolBarButton buttonType="Calendar"/>
+                <ToolBarButton buttonType="settings"/>
+                <ToolBarButton buttonType="collection"/>
+                <ToolBarButton buttonType="rip"/>
+                <ToolBarButton buttonType="calendar"/>
                 <KillButton/>
             </div>
         
