@@ -1,4 +1,5 @@
 import React from 'react';
+import HomeButton from './HomeButton';
 
 export default class RIPPage extends React.Component{
     render(){
