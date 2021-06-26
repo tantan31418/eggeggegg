@@ -8,6 +8,7 @@ import SettingPage from './SettingPage.jsx';
 import CollectionPage from './CollectionPage.jsx';
 import RIPPage from './RIPPage.jsx';
 import LoginPage from './LoginPage.jsx';
+import CalendarPage from './CalendarPage.jsx';
 
 import {getUser as getUserFromApi} from '../api/getUser.js';
 
@@ -100,7 +101,7 @@ export default class Main extends React.Component {
           />
           <Route
             exact
-            path="/settings"
+            path="/Settings"
             render={() => (
               <SettingPage
               />
@@ -108,7 +109,7 @@ export default class Main extends React.Component {
           />
           <Route
             exact
-            path="/collection"
+            path="/Collection"
             render={() => (
               <CollectionPage
               />
@@ -116,7 +117,7 @@ export default class Main extends React.Component {
           />
           <Route
             exact
-            path="/rip"
+            path="/RIP"
             render={() => (
               <RIPPage
               />
@@ -127,6 +128,14 @@ export default class Main extends React.Component {
             path="/login"
             render={() => (
               <LoginPage
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/Calendar"
+            render={() => (
+              <CalendarPage
               />
             )}
           />
