@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import Carousel from 'react-bootstrap/Carousel'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomeButton from './HomeButton';
-
-
+import './TodayRec.css';
 
 export default class TodayRec extends React.Component {
     static propTypes = {
@@ -24,7 +23,7 @@ export default class TodayRec extends React.Component {
                     <Carousel.Item>
                         <img
                             className="d-block h-50"
-                            src="https://b.ecimg.tw/items/DNAA2WA900B4W4K/000001_1612331911.jpg"
+                            src="1.jpg"
                             alt="First slide"
                         />
                         <Carousel.Caption>
@@ -35,7 +34,7 @@ export default class TodayRec extends React.Component {
                     <Carousel.Item>
                         <img
                             className="d-block h-50"
-                            src="https://b.ecimg.tw/items/DNAA2WA900B4W4K/000001_1612331911.jpg"
+                            src="2.jpg"
                             alt="Second slide"
                         />
 
@@ -47,7 +46,7 @@ export default class TodayRec extends React.Component {
                     <Carousel.Item>
                         <img
                             className="d-block h-50"
-                            src="https://b.ecimg.tw/items/DNAA2WA900B4W4K/000001_1612331911.jpg"
+                            src="3.jpg"
                             alt="Third slide"
                         />
 

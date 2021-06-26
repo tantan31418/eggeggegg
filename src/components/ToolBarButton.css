@@ -1,10 +1,30 @@
-.settings {
+/* .settings {  */
     /* background-image: url('Settings.png'); */
-    /* background-color: blueviolet; */
-    height: auto;
-    width: auto;
+    /* background-color: rgb(49, 226, 43); */
+    /* height: auto; */
+    /* width: auto; */
+    /* display: block; */
+    /* background-position: 'center'; */
+    /* background-size: 'cover'; */
+    /* background-repeat: 'no-repeat'; */
+    /* border-radius:50%; */
+    /* border-width: 0.1rem; 
+    border-style: solid; */
+/* } */
+
+.button img {
     display: block;
-    background-position: 'center';
-    background-size: 'cover';
-    background-repeat: 'no-repeat';
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    margin-left: 1rem;
+
+    /* border-color: blue;
+    border-width: 0.2rem;
+    border-style: solid; */
+    
+    width: 3.5rem;
+    /* height:0.2 em;  */
+}
+.button img:hover {
+    width: 3.9rem;
 }

@@ -1,0 +1,34 @@
+.blank_collection {
+    /* border-color: blue;
+    border-width: 0.2rem;
+    border-style: solid; */
+    height: 10rem;
+}
+/* .table {
+    position: relative;
+} */
+.table img {
+    /* position: absolute; */
+    height: 8rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    /* margin-left: 1.1rem; */
+    /* border-color: blue;
+    border-width: 0.2rem;
+    border-style: solid; */
+    z-index: 0;
+}
+#ani-1 {
+    position: relative;
+    left: 6rem;
+    margin-right: -20rem;
+    margin-top: -1.1rem;
+    z-index: 1;
+}
+#ani-2 {
+    position: relative;
+    left: 30rem;
+    /* margin-right: -20rem;*/
+    margin-top: -1.1rem; 
+    z-index: 1;
+}

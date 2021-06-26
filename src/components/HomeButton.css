@@ -1,0 +1,15 @@
+.homebutton img {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    margin-left: 1rem;
+
+    /* border-color: blue;
+    border-width: 0.2rem;
+    border-style: solid; */
+    
+    width: 3.5rem;
+    /* height:0.2 em;  */
+}
+.homebutton img:hover {
+    width: 3.9rem;
+}

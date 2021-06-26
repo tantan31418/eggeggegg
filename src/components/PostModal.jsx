@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Button, Modal ,Form} from 'rsuite';
-import {Button,Modal, Form, FormGroup, FormControl, ControlLabel, HelpBlock } from 'rsuite';
+import {Button, Modal, Form, FormGroup, FormControl, ControlLabel, HelpBlock } from 'rsuite';
 import { Slider, RangeSlider } from 'rsuite';
 import PropTypes from 'prop-types';
 import './PostModal.css';
@@ -56,9 +56,11 @@ export default class PostModal extends React.Component{
     render(){
         return (
         <div>
-                <Button  className="record_a" onClick={this.handleShow}>
-                    記錄一件開心的事吧！
+                <div className='blank-top'></div>
+                <Button className="record_a" onClick={this.handleShow}>
+                    <div>記錄一件開心的事吧！</div>
                 </Button>
+                <div className='blank-down'></div>
 
                 <Modal  show={this.state.show} onHide={this.handleClose} size="sm">
                     <Modal.Header>
@@ -75,16 +77,17 @@ export default class PostModal extends React.Component{
                         >
                             
                             <FormGroup>
-                                <ControlLabel>Textarea</ControlLabel>
+                                {/* <ControlLabel>Textarea</ControlLabel> */}
                                 <FormControl
-                                    rows={5}
+                                    rows={10}
                                     name="textarea"
                                     componentClass="textarea"
                                     placeholder="hello"
                                 />
                             </FormGroup>
                             <div>
-                              
+                            
+                            
                             <CustomField
                                 accepter={Slider}
                                 defaultValue={5}

@@ -1,0 +1,43 @@
+.land-center {
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* border-width: 0.2rem;
+    border-color: red;
+    border-style: solid; */
+    margin-top: -8rem;
+}
+.land-center p {
+    margin-top: 2rem;
+    margin-bottom: 1.7rem;
+
+    /* border-color: blue;
+    border-width: 0.1rem;
+    border-style: solid; */
+}
+#think {
+    color:steelblue;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Microsoft JhengHei','Microsoft YaHei','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.land-center a {
+    margin-top: 1.7rem;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+
+    color:steelblue;
+    letter-spacing: 0.05em;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Microsoft YaHei','SimSun', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+
+    /* border-color: rgb(123, 255, 0);
+    border-width: 0.1rem;
+    border-style: solid; */
+}
+.land-center a:hover {
+    text-decoration:none;
+    font-size: 1.3rem;
+    color: rgb(72, 148, 235);
+}
