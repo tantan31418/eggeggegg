@@ -44,7 +44,7 @@ export default class CollectionPage extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            user_id: "69",
+            user_id: "69",//不應該寫在這裡，應該是從props傳進來
             dino_count:0,
             cat_count:0,
             bear_count:1,
@@ -107,7 +107,7 @@ export default class CollectionPage extends React.Component{
                 <div className='d-flex row'>
                     <div className='d-flex col-12  col-lg-6 table justify-content-center'>
                         <span>
-                            <img id='ani-1'  style={this.state.bear_count?{}:{display:'none'}} src='ani_bear.png' onClick={this.handleBearClick}/>
+                            <img id='ani-1' style={this.state.bear_count?{}:{display:'none'}} src='ani_bear.png' onClick={this.handleBearClick}/>
                             <img id='ani-2' style={this.state.bear_count?{}:{display:'none'}} src='ani_bear.png' onClick={this.handleBearClick}/>
                         </span>                        
                         <img src='Table-1.png'/>
