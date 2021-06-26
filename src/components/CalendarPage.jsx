@@ -39,18 +39,20 @@ export default class CalendarPage extends React.Component{
                         </Modal.Header>
                         <Modal.Body>
                             <table id='calendar_table'>
-                                <tr>
-                                    <td id='td1'>電電過了✧*｡٩(ˊᗜˋ*)و✧*｡</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <td id='td1'>訓練台可以用了(ง๑ •̀_•́)ง</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td id='td1'>要放暑假了｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡</td>
-                                    <td>7</td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td id='td1'>電電過了✧*｡٩(ˊᗜˋ*)و✧*｡</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td id='td1'>訓練台可以用了(ง๑ •̀_•́)ง</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td id='td1'>要放暑假了｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡</td>
+                                        <td>7</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </Modal.Body>
                         <Modal.Footer>                        
