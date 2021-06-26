@@ -31,9 +31,9 @@ export default class KillButton extends React.Component{
                         <Modal.Title>Kill or Not</Modal.Title>
                     </Modal.Header> */}
                     <Modal.Body>
-                        <div class="d-flex text"><p>要放棄這顆蛋嗎...</p></div>
-                        <div class="d-flex justify-content-center sleepani"><SleepAni/></div>
-                        {/* <div class="d-flex justify-content-between">
+                        <div className="d-flex text"><p>要放棄這顆蛋嗎...</p></div>
+                        <div className="d-flex justify-content-center sleepani"><SleepAni/></div>
+                        {/* <div className="d-flex justify-content-between">
                             <img src='cancel.png'/>
                             <img src='hammer.png'/>
                         </div> */}
@@ -45,7 +45,7 @@ export default class KillButton extends React.Component{
                         <Button variant="primary" onClick={this.handleClose}>
                             Save Changes
                         </Button> */}
-                        <div class="d-flex justify-content-center choose">
+                        <div className="d-flex justify-content-center choose">
                             <img src='cancel.png' variant="secondary" onClick={this.handleClose}/>
                             <img id='hammer' src='hammer.png' variant="primary" onClick={this.handleClose}/>
                         </div>

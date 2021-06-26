@@ -20,34 +20,17 @@ export default class Main extends React.Component {
       user_id : "1",
       user_data : {
         
-          "uid": 0,
-          "username": "hello",
+          "id": 0,
+          "name": "hello",
           "current_animal": "dino",
-          "score" :{
-              "today_score":10,
-              "week_score":90,
-              "month_score":990,
-              "history_score":22220
-          },
-          "today_recorded":3,
-          "today_3_things":[
-              {
-                  "post_id":1,
-                  "post_content":"JS is so hard",
-                  "post_score":0
-              },
-              {
-                  "post_id":2,
-                  "post_content":"JS is so difficult",
-                  "post_score":0
-              },
-              {
-                  "post_id":3,
-                  "post_content":"JS is so frustrating",
-                  "post_score":0
-              }
-          ],
-          "status":"breeding"
+          "createday":'1624357600',
+          "todaysscore":10,
+          "weeklyscore":90,
+          "monthlyscore":990,
+          "historyscore":22220,
+          "dailynote":3,
+          "today_3_things":[1,2,3],
+          "cannewanimal":1
       
 
       }

@@ -13,14 +13,18 @@ import PropTypes from 'prop-types';
 
 export default class Landing extends React.Component{
     static propTypes = {
-        uid: PropTypes.number,
-        username: PropTypes.string,
-        current_animal: PropTypes.string,
-        score :PropTypes.object,
-        today_recorded:PropTypes.number,
-        today_3_things:PropTypes.array,
-        status:PropTypes.string,
+        id: PropTypes.number,
+        name: PropTypes.string,
+        current_animal: PropTypes.string,//list-animal userid status=egg
+        todaysscore:PropTypes.number,
+        weeklyscore:PropTypes.number,
+        monthlyscore:PropTypes.number,
+        historyscore:PropTypes.number,
+        dailynote:PropTypes.number,
+        today_3_things:PropTypes.array,//task='others'/mypost  userid ts
+        cannewanimal:PropTypes.number,
         foo_update:PropTypes.func
+        
     
     }
     
@@ -35,13 +39,15 @@ export default class Landing extends React.Component{
             <div className="d-flex justify-content-center land-center">
                 <div>
                     <p id='think'>想不到開心的事嗎？</p>
-                    <button onClick={this.props.foo_update}>foo update</button>
+                    {/* <button onClick={this.props.foo_update}>foo update</button> */}
                     <a href="/other_happy">看看別人因為什麼感到開心...</a>
                     <EggHero/>
                     <TdRcCount count={2}/>
                     <div className="d-flex justify-content-center"><PostModal/></div>
                     
-                    <ScoreBoard score={this.props.score}/>
+                    <ScoreBoard todaysscore={this.props.todaysscore} weeklyscore={this.props.weeklyscore} 
+                    monthlyscore={this.props.monthlyscore} historyscore={this.props.historyscore}
+                    />
                 </div>
             </div>
         </div>

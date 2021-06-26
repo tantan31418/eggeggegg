@@ -6,7 +6,10 @@ import PropTypes from 'prop-types';
 
 export default class ScoreBoard extends React.Component{
     static propTypes = {
-        score :PropTypes.object
+        todaysscore:PropTypes.number,
+        weeklyscore:PropTypes.number,
+        monthlyscore:PropTypes.number,
+        historyscore:PropTypes.number
     
     }
     
@@ -18,16 +21,16 @@ export default class ScoreBoard extends React.Component{
         return (
         <div>
             <div className="d-flex justify-content-center scoreboard">
-                <p>今天累積的快樂分數<span>{this.props.score.today_score}</span></p>
+                <p>今天累積的快樂分數&nbsp;<span>{this.props.todaysscore}</span></p>
             </div>
             <div className="d-flex justify-content-center scoreboard">
-                <p>本週累積的快樂分數<span>{this.props.score.week_score}</span></p>
+                <p>本週累積的快樂分數&nbsp;<span>{this.props.weeklyscore}</span></p>
             </div>
             <div className="d-flex justify-content-center scoreboard">
-                <p>本月累積的快樂分數<span>{this.props.score.month_score}</span></p>
+                <p>本月累積的快樂分數&nbsp;<span>{this.props.monthlyscore}</span></p>
             </div>
             <div className="d-flex justify-content-center scoreboard">
-                <p>有史以來累積的快樂分數<span>{this.props.score.history_score}</span></p>
+                <p>有史以來累積的快樂分數&nbsp;<span>{this.props.historyscore}</span></p>
             </div>
         </div>
         );
