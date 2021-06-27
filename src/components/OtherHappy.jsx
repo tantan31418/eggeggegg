@@ -19,7 +19,7 @@ export default class OtherHappy extends React.Component{
     render(){
         return (
         <div>
-            OtherHappy
+            {/* OtherHappy */}
             <HomeButton/>
             <OtherEggs {...this.props}/>
         </div>

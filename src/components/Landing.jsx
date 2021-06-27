@@ -35,7 +35,7 @@ export default class Landing extends React.Component{
     render(){
         return (
         <div>
-            Landing
+            {/* Landing */}
             <ToolBar/>
             <div className="d-flex justify-content-center land-center">
                 <div>

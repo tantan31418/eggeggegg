@@ -127,7 +127,7 @@ export default class CollectionPage extends React.Component{
     render(){
         return (
         <div>
-            CollectionPage
+            {/* CollectionPage */}
             <HomeButton/>
             <div className='blank_collection'></div>
             <div className='d-flex justify-content-center'>

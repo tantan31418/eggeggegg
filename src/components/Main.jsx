@@ -82,8 +82,8 @@ export default class Main extends React.Component {
     return (
       <Router>
         <div>
-          meow
-          <button onClick={this.getUser}>THIS</button>
+          {/* meow */}
+          {/* <button onClick={this.getUser}>THIS</button> */}
 
           <Route
             exact

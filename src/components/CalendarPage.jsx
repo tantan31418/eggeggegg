@@ -27,7 +27,7 @@ export default class CalendarPage extends React.Component{
     render(){
         return (
             <div>
-                Calendar
+                {/* Calendar */}
                 <HomeButton/>                
                     <div className='d-flex justify-content-center calendar'>
                         <Calendar style={{ width: "40rem" }} onChange={this.handleShow}/>

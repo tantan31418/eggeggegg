@@ -18,7 +18,7 @@ export default class TodayRec extends React.Component {
     render() {
         return (
             <div>
-                TodayRec
+                {/* TodayRec */}
                 <HomeButton/>
                 <div className='d-flex justify-content-center'>
                     <div className='out-border d-flex justify-content-center align-items-center'>
