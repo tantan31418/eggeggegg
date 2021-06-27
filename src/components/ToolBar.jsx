@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ToolBarButton from './ToolBarButton';
 import KillButton from '../components/KillButton.jsx';
+import './ToolBar.css';
 
 
 
@@ -17,7 +18,7 @@ export default class ToolBar extends React.Component{
 
     render(){
         return (
-            <div>
+            <div className='toolbar'>
                 <div className="d-flex justify-content-between">
                 <ToolBarButton buttonType="Settings"/>
                 <KillButton/>
