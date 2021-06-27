@@ -32,7 +32,7 @@ export default class Main extends React.Component {
           "historyscore":22220,
           "dailynote":3,
           "today_3_things":[1,2,3],
-          "cannewanimal":1
+          "cannewanimal":0
       
 
       }
@@ -97,7 +97,7 @@ export default class Main extends React.Component {
             exact
             path="/today_rec"
             render={() => (
-              <TodayRec
+              <TodayRec id={this.state.user_id}
               />
             )}
           />

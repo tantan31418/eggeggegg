@@ -5,14 +5,53 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import HomeButton from './HomeButton';
 import SleepAni from './SleepAni'
 import './TodayRec.css';
+import {list as getTdRecFromApi} from '../api/post.js';
+
 
 export default class TodayRec extends React.Component {
     static propTypes = {
-
+        id: PropTypes.string
     }
 
     constructor(props) {
         super(props);
+        this.state = {
+            td_3_things:[
+                {text:'foo',score:0},
+                {text:'foo',score:0},
+                {text:'foo',score:0}
+            ]
+        };
+        this.getTdRec = this.getTdRec.bind(this);
+    }
+
+    componentDidMount(){
+        this.getTdRec();
+    }
+
+    getTdRec(){
+        getTdRecFromApi(this.props.id,'myself')
+        .then(
+            (res) => {
+                // console.log(res.length);
+                // console.log(res[0].text);
+                
+                
+                // console.log(res+[{text:'foo'},
+                // {text:'foo'},
+                // {text:'foo'}]);
+                // this.setState({td_3_things:res+[{text:'foo'},
+                // {text:'foo'},
+                // {text:'foo'}]});
+                //insert (3-res.length) foos
+                for (let i=res.length;i<3;i++){
+                    res.push({text:'今天還沒記錄～快去記錄吧',score:0});
+                }
+                // console.log(res);
+                // console.log(this.state.td_3_things);
+                this.setState({td_3_things:res});
+            }
+        )
     }
 
     render() {
@@ -33,7 +72,9 @@ export default class TodayRec extends React.Component {
                         />
                         <Carousel.Caption>
                             {/* <h6>First slide label</h6> */}
-                            <p>放暑假~</p>
+                            {/* <p>放暑假~</p> */}
+                            <p>{this.state.td_3_things[0].text}</p>
+                            <p>快樂分數:{this.state.td_3_things[0].score}</p>
                             {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -47,7 +88,9 @@ export default class TodayRec extends React.Component {
 
                         <Carousel.Caption>
                             {/* <h6>Second slide label</h6> */}
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
+                            <p>{this.state.td_3_things[1].text}</p>
+                            <p>快樂分數:{this.state.td_3_things[1].score}</p>
                         </Carousel.Caption>
                     </Carousel.Item>
 
@@ -60,7 +103,9 @@ export default class TodayRec extends React.Component {
 
                         <Carousel.Caption>
                             {/* <h6>Third slide label</h6> */}
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            {/* <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
+                            <p>{this.state.td_3_things[2].text}</p>
+                            <p>快樂分數:{this.state.td_3_things[2].score}</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     
