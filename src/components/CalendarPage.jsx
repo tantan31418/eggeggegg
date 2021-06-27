@@ -5,6 +5,8 @@ import HomeButton from './HomeButton';
 import {Button, Modal, ControlLabel, HelpBlock } from 'rsuite';
 import PropTypes from 'prop-types';
 import './CalendarPage.css';
+import {auth,firestore} from '../firebase.js';
+import moment from 'moment';
 
 
 export default class CalendarPage extends React.Component{
@@ -17,11 +19,53 @@ export default class CalendarPage extends React.Component{
     handleClose = () => this.setState({show: false});
     handleShow = () => this.setState({show: true});
 
+    handleSelect = (date) => {
+        // console.log(date);
+        this.setState({select_date:date},this.getShowRec);
+        
+    }
+
     constructor(props){
         super(props);
         this.state = {
-            show:false
+            show:false,
+            show_posts:[
+                {content:'',score:0},
+                {content:'',score:0},
+                {content:'',score:0}
+            ]
         };
+        this.handleClose = this.handleClose.bind(this);
+        this.handleShow = this.handleShow.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
+        this.getShowRec = this.getShowRec.bind(this);
+    }
+
+    getShowRec(){
+        // console.log('startend');
+        // console.log(moment(this.state.select_date).startOf('day').toDate());
+        // console.log(moment(this.state.select_date).endOf('day').toDate());
+        let db = firestore();
+        let res = [];
+        db.collection('post')
+        .where('uid','==','testuser')
+        .where('create_date','>=',firestore.Timestamp.fromDate(moment(this.state.select_date).startOf('day').toDate()))
+        .where('create_date','<=',firestore.Timestamp.fromDate(moment(this.state.select_date).endOf('day').toDate()))
+        .get().then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+            //   console.log(doc.id, doc.data());
+            //   console.log(doc.data());
+              res.push(doc.data());
+            //   this.setState({});
+            });
+            for (let i=res.length;i<3;i++){
+                res.push({content:'',score:0});
+            }
+            this.setState({show_posts:res},
+                this.handleShow
+            );
+          });
+        
     }
 
     render(){
@@ -30,7 +74,7 @@ export default class CalendarPage extends React.Component{
                 {/* Calendar */}
                 <HomeButton/>                
                     <div className='d-flex justify-content-center calendar'>
-                        <Calendar style={{ width: "40rem" }} onChange={this.handleShow}/>
+                        <Calendar style={{ width: "40rem" }} onChange={this.handleSelect}/>
                     </div>
                 <div className='modal_calendar'>
                     <Modal size='xs' show={this.state.show} onHide={this.handleClose}>
@@ -41,16 +85,21 @@ export default class CalendarPage extends React.Component{
                             <table className='calendar_table'>
                                 <tbody>
                                     <tr>
-                                        <td id='td1'>電電過了✧*｡٩(ˊᗜˋ*)و✧*｡</td>
-                                        <td>5</td>
+                                        {/* <td id='td1'>電電過了✧*｡٩(ˊᗜˋ*)و✧*｡</td> */}
+                                        <td id='td1'>{this.state.show_posts[0].content}</td>
+                                        <td>{this.state.show_posts[0].score ? this.state.show_posts[0].score : ''}</td>
                                     </tr>
                                     <tr>
-                                        <td id='td1'>訓練台可以用了(ง๑ •̀_•́)ง</td>
-                                        <td>10</td>
+                                        {/* <td id='td1'>訓練台可以用了(ง๑ •̀_•́)ง</td> */}
+                                        {/* <td>10</td> */}
+                                        <td id='td1'>{this.state.show_posts[1].content}</td>
+                                        <td>{this.state.show_posts[1].score ? this.state.show_posts[1].score : ''}</td>
                                     </tr>
                                     <tr>
-                                        <td id='td1'>要放暑假了｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡</td>
-                                        <td>7</td>
+                                        {/* <td id='td1'>要放暑假了｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡</td>
+                                        <td>7</td> */}
+                                        <td id='td1'>{this.state.show_posts[2].content}</td>
+                                        <td>{this.state.show_posts[2].score ? this.state.show_posts[2].score : ''}</td>
                                     </tr>
                                 </tbody>
                             </table>
