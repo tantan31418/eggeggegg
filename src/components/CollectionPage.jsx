@@ -13,17 +13,44 @@ function RenderAniCount(props){
     else{
     if (props.clicked_ani === 'bear'){
         return(
-            <h3>{props.bear_count}</h3>
+            <div>
+                <div className='d-flex justify-content-center'>
+                    <div className='collect-border'>
+                        <span><img src='ani_bear.png' /></span>
+                    </div>
+                </div>
+                <div className='d-flex justify-content-center collect-number'>
+                    數量:<h3>{props.bear_count}</h3>
+                </div>
+            </div>
         );
     }
     else if (props.clicked_ani === 'cat'){
         return(
-            <h3>{props.cat_count}</h3>
+            <div>
+                <div className='d-flex justify-content-center'>
+                    <div className='collect-border'>
+                        <span><img src='ani_cat.png' /></span>
+                    </div>
+                </div>
+                <div className='d-flex justify-content-center collect-number'>
+                    數量:<h3>{props.cat_count}</h3>
+                </div>
+            </div>
         );
     }
     else if (props.clicked_ani === 'dino'){
         return(
-            <h3>{props.dino_count}</h3>
+            <div>
+                <div className='d-flex justify-content-center'>
+                    <div className='collect-border'>
+                        <span><img src='ani_dino.png' /></span>
+                    </div>
+                </div>
+                <div className='d-flex justify-content-center collect-number'>
+                    數量:<h3>{props.dino_count}</h3>
+                </div>
+            </div>
         );
     }
 }
@@ -107,15 +134,15 @@ export default class CollectionPage extends React.Component{
                 <div className='d-flex row'>
                     <div className='d-flex col-12  col-lg-6 table justify-content-center'>
                         <span>
-                            <img id='ani-1' style={this.state.bear_count?{}:{display:'none'}} src='ani_bear.png' onClick={this.handleBearClick}/>
-                            <img id='ani-2' style={this.state.bear_count?{}:{display:'none'}} src='ani_bear.png' onClick={this.handleBearClick}/>
+                            <img id='ani-1' /*style={this.state.bear_count?{}:{display:'none'}}*/ src='ani_bear.png' onClick={this.handleBearClick}/>
+                            <img id='ani-2' /*style={this.state.bear_count?{}:{display:'none'}}*/ src='ani_bear.png' onClick={this.handleBearClick}/>
                         </span>                        
                         <img src='Table-1.png'/>
                     </div>
                     <div className='d-flex col-12 col-lg-6 table justify-content-center'>
                         <span>
-                            <img id='ani-1' style={this.state.dino_count?{}:{display:'none'}} src='ani_dino.png' onClick={this.handleDinoClick}/>
-                            <img id='ani-2' style={this.state.cat_count?{}:{display:'none'}} src='ani_cat.png' onClick={this.handleCatClick}/>
+                            <img id='ani-1' /*style={this.state.dino_count?{}:{display:'none'}}*/ src='ani_dino.png' onClick={this.handleDinoClick}/>
+                            <img id='ani-2' /*style={this.state.cat_count?{}:{display:'none'}}*/ src='ani_cat.png' onClick={this.handleCatClick}/>
                         </span> 
                         <img src='Table-2.png'/>
                     </div>
@@ -133,12 +160,21 @@ export default class CollectionPage extends React.Component{
                     </div>
                 </div>
                 <div>
-                        <Modal show={this.state.show} onHide={this.handleClose}>
+                        <Modal size='xs' show={this.state.show} onHide={this.handleClose}>
                             {/* <Modal.Header closeButton>
                         <Modal.Title>Kill or Not</Modal.Title>
                     </Modal.Header> */}
                             <Modal.Body>
-                                <RenderAniCount {...this.state}/>
+                                {/* <div className='d-flex justify-content-center'>
+                                    <div className='collect-border'>
+                                        <span><img src='ani_bear.png'/></span>
+                                    </div>
+                                </div>
+                                <div className='d-flex justify-content-center collect-number'> */}
+                                    
+                                        <RenderAniCount {...this.state}/>
+                                    
+                                {/* </div> */}
                             </Modal.Body>
                         </Modal>
                 </div>
