@@ -54,9 +54,11 @@
     margin-top: 0.4rem;
     /* margin-left: -1rem; */
 }
-.rs-modal-wrapper, .rs-modal {
-    margin-top: 8rem;
-    margin-bottom: auto;
+.rs-modal-wrapper {
+    position: absolute;
+
+    margin-top: 6rem;
+    /* margin-bottom: auto; */
  }
 /* .rs-modal-open .rs-modal-has-backdrop.rs-modal-wrapper .rs-modal .rs-modal-dialog .rs-modal-content .rs-modal-body {
     max-height: 516px;

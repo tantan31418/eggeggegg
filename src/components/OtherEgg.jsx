@@ -26,7 +26,7 @@ export default class OtherEgg extends React.Component{
         return (
         <div className='d-flex col-12 col-md-6 col-lg-4 Egg justify-content-center'>
             <img src={`egghero_backed.png`} onClick={this.handleShow}/>
-            <Modal show={this.state.show} onHide={this.handleClose}>
+            <Modal show={this.state.show} onHide={this.handleClose} size='xs'>
                     <Modal.Header closeButton>
                         <Modal.Title>{this.props.happyText}</Modal.Title>
                     </Modal.Header>

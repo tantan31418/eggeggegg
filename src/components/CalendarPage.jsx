@@ -38,7 +38,7 @@ export default class CalendarPage extends React.Component{
                             {/* <Modal.Title>10/20</Modal.Title> */}
                         </Modal.Header>
                         <Modal.Body>
-                            <table id='calendar_table'>
+                            <table className='calendar_table'>
                                 <tbody>
                                     <tr>
                                         <td id='td1'>電電過了✧*｡٩(ˊᗜˋ*)و✧*｡</td>
