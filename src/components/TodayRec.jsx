@@ -30,6 +30,9 @@ export default class TodayRec extends React.Component {
 
     componentDidMount(){
         this.getTdRec();
+    }
+
+    getTdRec(){
         let db = firestore();
         let res = [];
         db.collection('post')
@@ -47,31 +50,6 @@ export default class TodayRec extends React.Component {
             }
             this.setState({td_3_things:res});
           });
-    }
-
-    getTdRec(){
-        // getTdRecFromApi(this.props.id,'myself')
-        // .then(
-        //     (res) => {
-        //         // console.log(res.length);
-        //         // console.log(res[0].text);
-                
-                
-        //         // console.log(res+[{text:'foo'},
-        //         // {text:'foo'},
-        //         // {text:'foo'}]);
-        //         // this.setState({td_3_things:res+[{text:'foo'},
-        //         // {text:'foo'},
-        //         // {text:'foo'}]});
-        //         //insert (3-res.length) foos
-        //         for (let i=res.length;i<3;i++){
-        //             res.push({text:'今天還沒記錄～快去記錄吧',score:0});
-        //         }
-        //         // console.log(res);
-        //         // console.log(this.state.td_3_things);
-        //         this.setState({td_3_things:res});
-        //     }
-        // )
     }
 
     render() {
