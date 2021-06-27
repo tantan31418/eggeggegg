@@ -4,6 +4,7 @@ import {Button, Modal, Form, FormGroup, FormControl, ControlLabel, HelpBlock } f
 import { Slider, RangeSlider } from 'rsuite';
 import PropTypes from 'prop-types';
 import './PostModal.css';
+import {firestore} from '../firebase.js';
 
 class CustomField extends React.PureComponent {
     render() {
@@ -43,13 +44,28 @@ export default class PostModal extends React.Component{
 
         this.handleClose = this.handleClose.bind(this);
         this.handleShow = this.handleShow.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        // db = firestore();
     }
     
 
     
-    
-    handleClose = () => this.setState({show: false});
+
+    handleClose = () => this.setState({
+        formValue: {
+            textarea: '',
+            happiness: 5
+        }, show: false
+    });
     handleShow = () => this.setState({show: true});
+
+    handleSubmit = () => {
+        let db = firestore();
+        db.collection("post").doc("testpost").set({
+            content:this.state.formValue.textarea,
+            score:this.state.formValue.happiness
+        }, { merge: true }).then(this.handleClose());
+    }
     
 
 
@@ -106,7 +122,7 @@ export default class PostModal extends React.Component{
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={this.handleClose} appearance="primary">
+                        <Button onClick={this.handleSubmit} appearance="primary">
                             Confirm
                         </Button>
                         <Button onClick={this.handleClose} appearance="subtle">

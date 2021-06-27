@@ -13,7 +13,7 @@ import SignIn from './SignIn.jsx';
 
 // import {getUser as getUserFromApi} from '../api/getUser.js';
 import {list as getUserFromApi} from '../api/user.js';
-import {auth} from '../firebase.js';
+import {auth , firestore} from '../firebase.js';
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -58,6 +58,15 @@ export default class Main extends React.Component {
         });
       }
     })
+
+    var db = firestore();
+    var ref = db.collection('user');
+
+    ref.get().then(querySnapshot => {
+      querySnapshot.forEach(doc => {
+        console.log(doc.id, doc.data());
+      });
+    });
 }
 
   getUser(){
