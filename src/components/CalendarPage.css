@@ -19,7 +19,6 @@
 }
 .calendar_table tr {
     border-bottom: solid 2px white;
-    
 }
 #td1 {
     /* top: 0.6rem; */
@@ -35,8 +34,8 @@
 }
 .react-datepicker-wrapper, .react-datepicker__input-container { display: block !important; }
 
-.rs-modal-wrapper, .rs-modal {
+/* .rs-modal-wrapper, .rs-modal {
     margin-top: 8rem;
     margin-bottom: auto;
     
- }
+ } */
