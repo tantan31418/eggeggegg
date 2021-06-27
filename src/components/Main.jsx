@@ -59,8 +59,8 @@ export default class Main extends React.Component {
       }
     })
 
-    var db = firestore();
-    var ref = db.collection('user');
+    let db = firestore();
+    let ref = db.collection('user');
 
     ref.get().then(querySnapshot => {
       querySnapshot.forEach(doc => {
