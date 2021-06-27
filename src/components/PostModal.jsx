@@ -5,6 +5,7 @@ import { Slider, RangeSlider } from 'rsuite';
 import PropTypes from 'prop-types';
 import './PostModal.css';
 import {firestore} from '../firebase.js';
+import moment from 'moment';
 
 class CustomField extends React.PureComponent {
     render() {
@@ -61,9 +62,11 @@ export default class PostModal extends React.Component{
 
     handleSubmit = () => {
         let db = firestore();
-        db.collection("post").doc("testpost").set({
+        db.collection("post").doc("fakepost3").set({
             content:this.state.formValue.textarea,
-            score:this.state.formValue.happiness
+            score:this.state.formValue.happiness,
+            uid:'testuser',
+            create_date:firestore.FieldValue.serverTimestamp() 
         }, { merge: true }).then(this.handleClose());
     }
     
