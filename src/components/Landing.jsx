@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
 
 export default class Landing extends React.Component{
     static propTypes = {
-        id: PropTypes.number,
+        id: PropTypes.string,
         name: PropTypes.string,
         current_animal: PropTypes.string,//list-animal userid status=egg
         todaysscore:PropTypes.number,

@@ -22,7 +22,7 @@ export default class Main extends React.Component {
       user_id : "1",
       user_data : {
         
-          "id": 66,
+          "id": '66',
           "name": "hello",
           "current_animal": "dino",
           "createday":'1624357600',
