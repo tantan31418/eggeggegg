@@ -8,7 +8,9 @@ import { Button, Modal } from 'rsuite';
 
 function RenderAniCount(props){
     if(props.clicked_ani === ''){
-        return (null);
+        return (
+            null
+        );
     }
     else{
     if (props.clicked_ani === 'bear'){

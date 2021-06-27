@@ -8,6 +8,12 @@
 }
 .scoreboard p {
     font-family:  "Microsoft YaHei","黑體","宋體",sans-serif;
-    font-weight: 700;
+    /* color: rgb(21, 51, 77); */
+    font-weight: 600;
     font-size: 1.2rem;
+}
+.scoreboard p span {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(45, 85, 206);
+    font-weight: 700;
 }
