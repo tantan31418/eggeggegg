@@ -9,6 +9,7 @@ import PostModal from './PostModal.jsx';
 import './Landing.css';
 
 import PropTypes from 'prop-types';
+import {auth} from '../firebase.js';
 
 
 
@@ -31,6 +32,7 @@ export default class Landing extends React.Component{
     
     constructor(props){
         super(props);
+        // console.log(auth.getCurrentUser());
     }
     render(){
         return (
@@ -39,6 +41,7 @@ export default class Landing extends React.Component{
             <ToolBar/>
             <div className="d-flex justify-content-center land-center">
                 <div>
+                    {/* <p>{auth.getCurrentUser}</p> */}
                     <p id='think'>想不到開心的事嗎？</p>
                     {/* <button onClick={this.props.foo_update}>foo update</button> */}
                     <a href="/other_happy">看看別人因為什麼感到開心...</a>

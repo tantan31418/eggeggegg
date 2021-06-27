@@ -9,16 +9,17 @@ import CollectionPage from './CollectionPage.jsx';
 import RIPPage from './RIPPage.jsx';
 import LoginPage from './LoginPage.jsx';
 import CalendarPage from './CalendarPage.jsx';
+import SignIn from './SignIn.jsx';
 
 // import {getUser as getUserFromApi} from '../api/getUser.js';
 import {list as getUserFromApi} from '../api/user.js';
-
-
+import {auth} from '../firebase.js';
 
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      authenticated: false,
       user_id : "1",
       user_data : {
         
@@ -46,6 +47,17 @@ export default class Main extends React.Component {
 
     console.log('component did mount');
     // this.getUser();
+    auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          authenticated: true,
+        });
+      } else {
+        this.setState({
+          authenticated: false,
+        });
+      }
+    })
 }
 
   getUser(){
@@ -65,22 +77,18 @@ export default class Main extends React.Component {
         }
       );
     
-    // getUserFromApi()
-    //   .then((user) => {
-    //     this.setState({
-    //       user
-    //     });
-    //   })
-    //   .catch((err) => {
-    //     console.error('Error getting user', err);
-    // //     // this.endLoading();
-    //   });
+   
   }
 
   render() {
     // this.getUser();
     return (
-      <Router>
+      this.state.authenticated === false ?
+        <Router>
+          <SignIn />
+        </Router>
+      :
+        <Router>
         <div>
           {/* meow */}
           {/* <button onClick={this.getUser}>THIS</button> */}
