@@ -76,7 +76,7 @@ export default class TodayRec extends React.Component {
                                 <Carousel.Item interval={10000}>
                                     <img
                                         className="d-block h-3 item"
-                                        src="1.jpg"
+                                        src="1.png"
                                         alt="First slide"
                                     />
                                     <Carousel.Caption>
@@ -91,7 +91,7 @@ export default class TodayRec extends React.Component {
                                 <Carousel.Item interval={10000}>
                                     <img
                                         className="d-block h-3 item"
-                                        src="2.jpg"
+                                        src="2.png"
                                         alt="Second slide"
                                     />
 
@@ -106,7 +106,7 @@ export default class TodayRec extends React.Component {
                                 <Carousel.Item interval={10000}>
                                     <img
                                         className="d-block h-3 item"
-                                        src="3.jpg"
+                                        src="3.png"
                                         alt="Third slide"
                                     />
 
