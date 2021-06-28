@@ -12,7 +12,8 @@ import moment from 'moment';
 
 export default class TodayRec extends React.Component {
     static propTypes = {
-        id: PropTypes.string
+        id: PropTypes.string,
+        current_animal: PropTypes.string
     }
 
     constructor(props) {
@@ -35,10 +36,21 @@ export default class TodayRec extends React.Component {
     getTdRec(){
         let db = firestore();
         let res = [];
+        // let query = 
         db.collection('post')
         .where('uid','==',this.props.id)
         .where('create_date','>=',firestore.Timestamp.fromDate(moment().startOf('day').toDate()))
+        .orderBy('create_date')
+        .orderBy('score','desc')
         .get().then(querySnapshot => {
+            console.log(querySnapshot.docs.data);
+            querySnapshot.docs.sort(function(a,b){
+                let key_a = a.data().score;
+                let key_b = b.data().score;
+                if (key_a < key_b) return -1;
+                if (key_a > key_b) return 1;
+                return 0;
+            });
             querySnapshot.forEach(doc => {
             //   console.log(doc.id, doc.data());
             //   console.log(doc.data());
@@ -112,7 +124,7 @@ export default class TodayRec extends React.Component {
                 </div> {/*out border*/}
                 
                 </div>
-                <div className='d-flex justify-content-center'><SleepAni/></div>
+                <div className='d-flex justify-content-center'><SleepAni current_animal={this.props.current_animal}/></div>
             </div>
         );
     }

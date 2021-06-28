@@ -172,7 +172,7 @@ export default class Main extends React.Component {
             exact
             path="/today_rec"
             render={() => (
-              <TodayRec id={this.state.auth_user_id}
+              <TodayRec id={this.state.auth_user_id} current_animal={this.state.auth_user_data.current_animal}
               />
             )}
           />

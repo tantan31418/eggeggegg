@@ -79,8 +79,12 @@ export default class KillButton extends React.Component{
                         <Modal.Title>Kill or Not</Modal.Title>
                     </Modal.Header> */}
                     <Modal.Body>
-                        <div className="d-flex text"><p>要放棄這顆蛋嗎...</p></div>
-                        <div className="d-flex justify-content-center sleepani"><SleepAni/></div>
+                        <div className="d-flex text">{this.props.user_status === 'breed' ? <p>要放棄這顆蛋嗎...</p>
+                            : this.props.user_status === 'born' ? <p>已經孵化成功～</p>
+                                : this.props.user_status === 'dead' ? <p>蛋已經被您敲碎了QQ</p>
+                                    : this.props.user_status === 'new_egg' ? <p>還沒有選擇動物，快去選擇吧！</p> : null
+                        }</div>
+                        <div className="d-flex justify-content-center sleepani"><SleepAni current_animal={this.props.current_animal} /></div>
                         {/* <div className="d-flex justify-content-between">
                             <img src='cancel.png'/>
                             <img src='hammer.png'/>
@@ -93,10 +97,12 @@ export default class KillButton extends React.Component{
                         <Button variant="primary" onClick={this.handleClose}>
                             Save Changes
                         </Button> */}
-                        <div className="d-flex justify-content-center choose">
-                            <img src='cancel.png' variant="secondary" onClick={this.handleClose}/>
-                            <img id='hammer' src='hammer.png' variant="primary" onClick={this.handleKill}/>
-                        </div>
+                        {this.props.user_status === 'breed' ?
+                            <div className="d-flex justify-content-center choose">
+                                <img src='cancel.png' variant="secondary" onClick={this.handleClose} />
+                                <img id='hammer' src='hammer.png' variant="primary" onClick={this.handleKill} />
+                            </div> : null}
+
                     </Modal.Footer>
                 </Modal>
             </div>
