@@ -46,7 +46,7 @@ export default class CreateAni extends React.Component{
     render(){
         return (
         <div>
-            <img src='box.png' onClick={this.handleShow}/>
+            <img src='box.png' onClick={this.handleShow} style={{marginTop:60, marginBottom:10, marginLeft:40}}/>
                 <Modal size='md' show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Choose an Animal</Modal.Title>

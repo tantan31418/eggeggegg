@@ -20,6 +20,14 @@
     font-weight: 700;
     font-family: 'Microsoft JhengHei','Microsoft YaHei','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+#chooseani {
+    color:rgb(180, 142, 70);
+    letter-spacing: 0.05em;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Microsoft YaHei','SimSun', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 7rem;
+}
 .land-center a {
     margin-top: 1.7rem;
     margin-bottom: 3rem;

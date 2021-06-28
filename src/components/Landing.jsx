@@ -51,8 +51,10 @@ export default class Landing extends React.Component{
                         <a href="/other_happy">看看別人因為什麼感到開心...</a>
                         {this.props.status === 'new_egg' ?
                             <div>
-                            <CreateAni create_animal={this.props.create_animal} />
-                            <h3>選擇一個動物</h3>
+                                <CreateAni create_animal={this.props.create_animal} />
+                                <div className='d-flex justify-content-center'>
+                                    <p id='chooseani' style={{align: "center"}}>選擇一個動物</p>
+                                </div>
                             </div>
                             :
                             <div>

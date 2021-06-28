@@ -112,15 +112,15 @@ export default class CollectionPage extends React.Component{
                 <div className='d-flex row'>
                     <div className='d-flex col-12  col-lg-6 table justify-content-center'>
                         <span>
-                            <img id='ani-1' style={this.props.bear?{}:{display:'none'}} src='ani_bear.png' onClick={this.handleBearClick}/>
-                            <img id='ani-2' style={this.props.bear?{}:{display:'none'}} src='ani_bear.png' onClick={this.handleBearClick}/>
+                            <img id='collect-bear' style={this.props.bear?{}:{/*display:'none'*/visibility:'hidden'}} src='ani_bear.png' onClick={this.handleBearClick}/>
+                            {/* <img id='ani-2' style={this.props.bear?{}:{display:'none'}} src='ani_bear.png' onClick={this.handleBearClick}/> */}
                         </span>                        
                         <img src='Table-1.png'/>
                     </div>
                     <div className='d-flex col-12 col-lg-6 table justify-content-center'>
                         <span>
-                            <img id='ani-1' style={this.props.dino?{}:{display:'none'}} src='ani_dino.png' onClick={this.handleDinoClick}/>
-                            <img id='ani-2' style={this.props.cat?{}:{display:'none'}} src='ani_cat.png' onClick={this.handleCatClick}/>
+                            <img id='collect-dino' style={this.props.dino?{}:{/*display:'none'*/visibility:'hidden'}} src='ani_dino.png' onClick={this.handleDinoClick}/>
+                            <img id='collect-cat' style={this.props.cat?{}:{/*display:'none'*/visibility:'hidden'}} src='ani_cat.png' onClick={this.handleCatClick}/>
                         </span> 
                         <img src='Table-2.png'/>
                     </div>
