@@ -37,9 +37,11 @@ export default class SignIn extends Component {
                         <img src='egghero_backed.png' style={{marginTop:50 }}/>
                     </div>
                     <div className="d-flex justify-content-center col-6 mx-auto button-wrapper">
-                        <button className="button-log-in" onClick={this.googleSignIn}>
-                            Log in with Google
-                        </button>
+                        <Link to='/' replace>
+                            <button className="button-log-in" onClick={this.googleSignIn}>
+                                Log in with Google
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
