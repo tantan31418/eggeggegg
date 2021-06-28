@@ -68,23 +68,8 @@ export default class CreateAni extends React.Component{
                             </tbody>
                             </table>
                         </div>
-                        
-                        {/* <div className="d-flex justify-content-between">
-                            <img src='cancel.png'/>
-                            <img src='hammer.png'/>
-                        </div> */}
                     </Modal.Body>
                     <Modal.Footer>
-                        {/* <Button variant="secondary" onClick={this.handleClose}>
-                            Close
-                        </Button>
-                        <Button variant="primary" onClick={this.handleClose}>
-                            Save Changes
-                        </Button> */}
-                        {/* <div className="d-flex justify-content-center choose">
-                            <img src='cancel.png' variant="secondary" onClick={this.handleClose} />
-                            <img id='hammer' src='hammer.png' variant="primary" onClick={this.handleClose} />
-                        </div> */}
                     </Modal.Footer>
                 </Modal>
         </div>

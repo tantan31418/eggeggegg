@@ -17,9 +17,9 @@ export default class SleepAni extends React.Component{
     render(){
         return (
         <div className='sleepAni'>
-            {(this.props.current_animal) === 'dino' ? <img src="sleepani_dino.png"/>
-            : (this.props.current_animal) === 'cat' ? <img src="sleepani_cat.png"/>
-            : (this.props.current_animal) === 'bear' ? <img src="sleepani_bear.png"/> : <img alt='error'/>    
+            {(this.props.current_animal) === 'dino' ? <img id='sleep-dino' src="sleepani_dino.png"/>
+            : (this.props.current_animal) === 'cat' ? <img id='sleep-cat' src="sleepani_cat.png"/>
+            : (this.props.current_animal) === 'bear' ? <img id='sleep-bear' src="sleepani_bear.png"/> : <img alt='error'/>    
         }
             
         </div>
