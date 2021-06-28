@@ -207,6 +207,7 @@ export default class Main extends React.Component {
             path="/RIP"
             render={() => (
               <RIPPage
+              {...this.state.auth_user_data.rip}
               />
             )}
           />

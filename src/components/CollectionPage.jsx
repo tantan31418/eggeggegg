@@ -1,10 +1,9 @@
 import React from 'react';
 import './CollectionPage.css';
 import HomeButton from './HomeButton';
-import {list as countAniFromApi} from '../api/animal.js'
 import PropTypes from 'prop-types';
 
-import { Button, Modal } from 'rsuite';
+import { Modal } from 'rsuite';
 
 function RenderAniCount(props){
     if(props.clicked_ani === ''){
@@ -61,8 +60,6 @@ function RenderAniCount(props){
 
 export default class CollectionPage extends React.Component{
     static propTypes = {
-        // handleClose : PropTypes.func,
-        // handleShow : PropTypes.func
         id : PropTypes.string,
         dino : PropTypes.number,
         cat : PropTypes.number,
