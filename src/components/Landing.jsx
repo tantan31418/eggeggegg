@@ -35,9 +35,14 @@ export default class Landing extends React.Component{
     }
     render(){
         return (
-        <div>
-            {/* Landing */}
-            <ToolBar/>
+            <div>
+                <ToolBar id={this.props.id}
+                    updateUser={this.props.updateUser}
+                    user_status={this.props.status}
+                    current_animal={this.props.current_animal}
+                    rip={this.props.rip}
+                    current_animal_id={this.props.current_animal_id}
+                />
             <div className="d-flex justify-content-center land-center">
                 <div>
                     {/* <p>{auth.getCurrentUser}</p> */}
