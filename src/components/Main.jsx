@@ -12,8 +12,7 @@ import CalendarPage from './CalendarPage.jsx';
 import SignIn from './SignIn.jsx';
 import './Main.css';
 
-// import {getUser as getUserFromApi} from '../api/getUser.js';
-import {list as getUserFromApi} from '../api/user.js';
+
 import {auth , firestore} from '../firebase.js';
 
 export default class Main extends React.Component {
@@ -173,8 +172,6 @@ export default class Main extends React.Component {
       :
         <Router>
         <div>
-          {/* meow */}
-          {/* <button onClick={this.getUser}>THIS</button> */}
 
           <Route
             exact
