@@ -46,6 +46,7 @@ export default class CalendarPage extends React.Component{
         // console.log('startend');
         // console.log(moment(this.state.select_date).startOf('day').toDate());
         // console.log(moment(this.state.select_date).endOf('day').toDate());
+        console.log(moment());
         let db = firestore();
         let res = [];
         db.collection('post')

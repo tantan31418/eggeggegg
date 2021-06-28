@@ -10,26 +10,32 @@ import moment from 'moment';
 
 
 
+
 export default class TodayRec extends React.Component {
     static propTypes = {
         id: PropTypes.string,
-        current_animal: PropTypes.string
+        current_animal: PropTypes.string,
+        user_status:PropTypes.string,
+        cur_ani_create_date:PropTypes.instanceOf(firestore.Timestamp)
     }
 
     constructor(props) {
         super(props);
         this.state = {
             td_3_things:[
-                {content:'foo',score:0},
-                {content:'foo',score:0},
-                {content:'foo',score:0}
-            ]
+                {content:'',score:0},
+                {content:'',score:0},
+                {content:'',score:0}
+            ],
+            days_until_born:null
         };
         this.getTdRec = this.getTdRec.bind(this);
+        this.getDaysUntilBorn = this.getDaysUntilBorn.bind(this);
     }
 
     componentDidMount(){
         this.getTdRec();
+        this.getDaysUntilBorn();
     }
     //component Will Unmount => manage memory
 
@@ -60,6 +66,21 @@ export default class TodayRec extends React.Component {
             });
             this.setState({td_3_things:res});
           });
+    }
+
+    getDaysUntilBorn(){
+        const dino_breed_time = 0;
+        const cat_breed_time = 0;
+        const bear_breed_time = 0;
+        let breed_time = (
+            (this.props.current_animal === 'dino') ? dino_breed_time :
+                (this.props.current_animal === 'cat') ? cat_breed_time :
+                    (this.props.current_animal === 'bear') ? bear_breed_time : null
+        );
+        let start_date = moment(this.props.cur_ani_create_date.toDate()).startOf('day');
+        let now_date = moment().startOf('day');
+        let dura_days = now_date.diff(start_date, 'days');
+        this.setState({days_until_born:breed_time-dura_days});
     }
 
     render() {
@@ -124,6 +145,13 @@ export default class TodayRec extends React.Component {
 
                 </div>
                 {/*this.props.current_animal === 'cat' ? null :*/ <div className='d-flex justify-content-center'><SleepAni current_animal={this.props.current_animal} /></div>}
+                <div className='d-flex justify-content-center'>
+                    {this.props.user_status === 'breed' ? <p>距離孵化還有&nbsp;<span>{this.state.days_until_born}</span>天</p>
+                        :  this.props.user_status === 'born' ? <p>已經孵化成功～</p>
+                        :  this.props.user_status === 'dead' ? <p>您敲碎了這顆蛋QQ</p>
+                        : null
+                    }
+                </div>
             </div>
         );
     }

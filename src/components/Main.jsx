@@ -173,6 +173,8 @@ export default class Main extends React.Component {
             path="/today_rec"
             render={() => (
               <TodayRec id={this.state.auth_user_id} current_animal={this.state.auth_user_data.current_animal}
+              user_status={this.state.auth_user_data.status}
+              cur_ani_create_date={this.state.auth_user_data.cur_ani_create_date}
               />
             )}
           />
