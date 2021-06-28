@@ -4,6 +4,14 @@
     cursor: pointer;
     text-decoration: none;
   }
+  #cometomorrow-text {
+    /* color:rgb(236, 160, 17); */
+    letter-spacing: 0.05em;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Microsoft YaHei','SimSun', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 7rem;
+  }
   .blank-up {
     margin-top: 2rem;
   }

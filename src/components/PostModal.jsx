@@ -172,7 +172,12 @@ export default class PostModal extends React.Component{
                         <div>記錄一件開心的事吧！</div>
                     </Button>
                     :
-                    <h3>明天再來記錄吧！</h3>}
+                    // <div className='d-flex justify-content-center'>
+                    <h3 id='cometomorrow-text' style={{align: "center"}} 
+                    style={this.props.user_status === 'dead' ? {color : 'rgb(74, 170, 149)'} 
+                    : this.props.current_animal === 'bear' ? {color:'rgb(180, 142, 70)'} 
+                    : this.props.current_animal === 'cat' ?  {color : 'rgb(190, 127, 209)'}  : {color:'rgb(236, 160, 17)'}}>&nbsp;&nbsp;&nbsp;明天再來記錄吧！</h3>
+                    }
 
                 <div className='blank-down'></div>
 
