@@ -10,6 +10,7 @@ import './Landing.css';
 
 import PropTypes from 'prop-types';
 import {firestore} from '../firebase.js';
+import {Link} from 'react-router-dom';
 
 
 
@@ -48,7 +49,7 @@ export default class Landing extends React.Component{
                         {/* <p>{auth.getCurrentUser}</p> */}
                         <p id='think'>想不到開心的事嗎？</p>
                         {/* <button onClick={this.props.foo_update}>foo update</button> */}
-                        <a href="/other_happy">看看別人因為什麼感到開心...</a>
+                        <Link to="/other_happy">看看別人因為什麼感到開心...</Link>
                         {this.props.status === 'new_egg' ?
                             <div>
                                 <CreateAni create_animal={this.props.create_animal} />
