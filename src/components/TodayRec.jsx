@@ -43,23 +43,21 @@ export default class TodayRec extends React.Component {
         .orderBy('create_date')
         .orderBy('score','desc')
         .get().then(querySnapshot => {
-            console.log(querySnapshot.docs);
-            querySnapshot.docs.sort(function(a,b){
-                let key_a = a.data().score;
-                let key_b = b.data().score;
-                if (key_a < key_b) return -1;
-                if (key_a > key_b) return 1;
-                return 0;
-            });
             querySnapshot.forEach(doc => {
             //   console.log(doc.id, doc.data());
             //   console.log(doc.data());
               res.push(doc.data());
-            //   this.setState({});
             });
             for (let i=res.length;i<3;i++){
                 res.push({content:'今天還沒記錄～快去記錄吧',score:0});
             }
+            res.sort(function(a,b){
+                let key_a = a.score;
+                let key_b = b.score;
+                if (key_a < key_b) return 1;
+                if (key_a > key_b) return -1;
+                return 0;
+            });
             this.setState({td_3_things:res});
           });
     }
