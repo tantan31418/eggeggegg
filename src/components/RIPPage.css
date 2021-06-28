@@ -1,0 +1,27 @@
+.tombstones {
+    border: greenyellow;
+    /* border-style: solid; */
+    border-width: 0.2rem;
+    
+    margin-top: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.tombstone {
+    border: rgb(241, 100, 6);
+    /* border-style: solid; */
+    border-width: 0.2rem;
+    margin-bottom: 3rem;
+}
+.RIP-text {
+    color:rgb(51, 81, 136);
+    letter-spacing: 0.03em;
+    
+    font-family: 'Microsoft YaHei','SimSun', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* margin-bottom: 7rem; */
+    margin-top: 1.5rem;
+}
+.RIP-text p {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
