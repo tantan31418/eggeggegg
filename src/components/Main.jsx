@@ -100,11 +100,12 @@ export default class Main extends React.Component {
           collection: {dino: 0, cat: 0, bear: 0},
           current_animal: "",
           current_animal_id: "",
+          cur_ani_create_date:null,
           rip: {cat: 0, bear: 0, dino: 0},
           score: {today_score: 0, month_score: 0, week_score: 0, history_score: 0},
           status: "new_egg",
           today_recorded: 0,
-          create_date:firestore.FieldValue.serverTimestamp() 
+          user_create_date:firestore.FieldValue.serverTimestamp() 
         }, { merge: true })
         .then(
           db.collection('user').doc(this.state.auth_user_id).get()
@@ -123,13 +124,14 @@ export default class Main extends React.Component {
     //update user's current animal, status ...
     //create a new instance in animal
     //add checks to prevent multi ani created
+    console.log('create new animal');
     let new_ani_id = '';
     let db = firestore();
     db.collection('animal')
       .add({
         animal_status: 'breed',
         animal_type: ani,
-        create_date: firestore.FieldValue.serverTimestamp(),
+        ani_create_date: firestore.FieldValue.serverTimestamp(),
         uid: this.state.auth_user_id
       }).then(
         () => {
@@ -145,6 +147,7 @@ export default class Main extends React.Component {
                     //update backend user
                     current_animal: ani,
                     current_animal_id: doc.id,
+                    cur_ani_create_date:doc.data().ani_create_date,
                     status: "breed"
                   }, { merge: true }).then(
                     this.getUser()
@@ -181,6 +184,7 @@ export default class Main extends React.Component {
               id={this.state.auth_user_id}
               {...this.state.auth_user_data}
               create_animal={this.createAnimal}
+              updateUser={this.getUser}
               />
             )}
           />

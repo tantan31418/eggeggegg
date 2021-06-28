@@ -31,7 +31,9 @@ export default class PostModal extends React.Component{
     static propTypes = {
         // handleClose : PropTypes.func,
         // handleShow : PropTypes.func
-        id: PropTypes.string
+        id: PropTypes.string,
+        today_recorded : PropTypes.number,
+        updateUser : PropTypes.func
     }
     
     constructor(props){
@@ -68,7 +70,20 @@ export default class PostModal extends React.Component{
             score:this.state.formValue.happiness,
             uid:this.props.id,
             create_date:firestore.FieldValue.serverTimestamp() 
-        }, { merge: true }).then(this.handleClose());
+        }, { merge: true })
+        .then(
+            () => {
+                db.collection('user').doc(this.props.id).set({
+                    today_recorded: this.props.today_recorded + 1
+                },{merge:true}).then(
+                    ()=>{
+                        this.props.updateUser();
+                        this.handleClose();
+                    }
+                    
+                    )
+            }
+        );
     }
     
 

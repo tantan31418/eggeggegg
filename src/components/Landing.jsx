@@ -18,13 +18,15 @@ export default class Landing extends React.Component{
         id: PropTypes.string,
         current_animal: PropTypes.string,
         current_animal_id: PropTypes.string,
+        cur_ani_create_date: PropTypes.instanceOf(firestore.Timestamp),
         today_recorded: PropTypes.number,
         collection: PropTypes.object,
         rip: PropTypes.object,
         score: PropTypes.object,
         status: PropTypes.string,
-        create_date: PropTypes.instanceOf(firestore.Timestamp),
-        create_animal: PropTypes.func
+        user_create_date: PropTypes.instanceOf(firestore.Timestamp),
+        create_animal: PropTypes.func,
+        updateUser : PropTypes.func
     }
     
     constructor(props){
@@ -47,7 +49,12 @@ export default class Landing extends React.Component{
                     :
                      <EggHero current_animal={this.props.current_animal} status={this.props.status}/>}
                     <TdRcCount count={this.props.today_recorded}/>
-                    <div className="d-flex justify-content-center"><PostModal id={this.props.id}/></div>
+                    <div className="d-flex justify-content-center">
+                        <PostModal id={this.props.id} 
+                        today_recorded={this.props.today_recorded}
+                        updateUser={this.props.updateUser}
+                        />
+                    </div>
                     
                     <ScoreBoard todaysscore={this.props.score.today_score} weeklyscore={this.props.score.week_score} 
                     monthlyscore={this.props.score.month_score} historyscore={this.props.score.history_score}
