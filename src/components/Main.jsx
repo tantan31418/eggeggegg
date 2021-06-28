@@ -44,6 +44,7 @@ export default class Main extends React.Component {
     this.getUser=this.getUser.bind(this);
     this.handleAuthed=this.handleAuthed.bind(this);
     this.createUser=this.createUser.bind(this);
+    this.createAnimal=this.createAnimal.bind(this);
   }
 
   handleAuthed = () => this.setState({authenticated:true});
@@ -71,25 +72,9 @@ export default class Main extends React.Component {
 }
 
   getUser(){
-    // console.log('call user api');
-    // console.log('call getUser()');
-    // // let user_data = getUserFromApi(66);
-    // // console.log(user_data['user_data']);
-    // // this.setState({user_data});
-    // getUserFromApi(66)
-    //   .then(
-    //     (user_data) => {
-    //       // console.log(res.data);
-    //       console.log(user_data[0]);
-    //       this.setState({user_data:{...user_data[0]}});
-    //       console.log('getusersetstate');
-    //       console.log(this.state);
-    //     }
-    //   );
+    // can also work as update function (update frontend's data)
     let db = firestore();
-    // let ref = db.collection('user');
-
-    db.collection('user').doc('testuserabcd').get()
+    db.collection('user').doc(this.state.auth_user_id).get()
     .then((doc)=>{
         if (doc.exists){
           //get old user
@@ -110,19 +95,19 @@ export default class Main extends React.Component {
 
   createUser(){
     let db = firestore();
-        db.collection("user").doc('foocreateuser')
+        db.collection("user").doc(this.state.auth_user_id)
         .set({
           collection: {dino: 0, cat: 0, bear: 0},
           current_animal: "",
           current_animal_id: "",
           rip: {cat: 0, bear: 0, dino: 0},
           score: {today_score: 0, month_score: 0, week_score: 0, history_score: 0},
-          status: "new_user",
+          status: "new_egg",
           today_recorded: 0,
           create_date:firestore.FieldValue.serverTimestamp() 
         }, { merge: true })
         .then(
-          db.collection('user').doc('foocreateuser').get()
+          db.collection('user').doc(this.state.auth_user_id).get()
           .then(
             (doc)=>{
               console.log(doc);
@@ -130,6 +115,49 @@ export default class Main extends React.Component {
             }
           )
         );
+  }
+
+  createAnimal(ani){
+    //pass this func down to createAni
+    //choose new animal
+    //update user's current animal, status ...
+    //create a new instance in animal
+    //add checks to prevent multi ani created
+    let new_ani_id = '';
+    let db = firestore();
+    db.collection('animal')
+      .add({
+        animal_status: 'breed',
+        animal_type: ani,
+        create_date: firestore.FieldValue.serverTimestamp(),
+        uid: this.state.auth_user_id
+      }).then(
+        () => {
+          db.collection('animal')
+            .where('uid', '==', this.state.auth_user_id)
+            .where('animal_status', '==', 'breed')
+            .get().then(querySnap => {
+              querySnap.forEach(doc => {
+                //there should only be one animal active
+                // new_ani_id = doc.id;
+                db.collection('user').doc(this.state.auth_user_id)
+                  .set({
+                    //update backend user
+                    current_animal: ani,
+                    current_animal_id: doc.id,
+                    status: "breed"
+                  }, { merge: true }).then(
+                    this.getUser()
+                    //update frontend user
+                  )
+              })
+            }
+            )
+        }
+
+
+      )
+
   }
 
   render() {
@@ -149,7 +177,10 @@ export default class Main extends React.Component {
             exact
             path="/"
             render={() => (
-              <Landing {...this.state.user_data}
+              <Landing 
+              id={this.state.auth_user_id}
+              {...this.state.auth_user_data}
+              create_animal={this.createAnimal}
               />
             )}
           />
@@ -157,7 +188,7 @@ export default class Main extends React.Component {
             exact
             path="/today_rec"
             render={() => (
-              <TodayRec id={this.state.user_id}
+              <TodayRec id={this.state.auth_user_id}
               />
             )}
           />

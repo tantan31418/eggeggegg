@@ -9,24 +9,22 @@ import PostModal from './PostModal.jsx';
 import './Landing.css';
 
 import PropTypes from 'prop-types';
-import {auth} from '../firebase.js';
+import {auth,firestore} from '../firebase.js';
 
 
 
 export default class Landing extends React.Component{
     static propTypes = {
         id: PropTypes.string,
-        name: PropTypes.string,
-        current_animal: PropTypes.string,//list-animal userid status=egg
-        todaysscore:PropTypes.number,
-        weeklyscore:PropTypes.number,
-        monthlyscore:PropTypes.number,
-        historyscore:PropTypes.number,
-        dailynote:PropTypes.number,
-        today_3_things:PropTypes.array,//task='others'/mypost  userid ts
-        cannewanimal:PropTypes.number,
-        
-    
+        current_animal: PropTypes.string,
+        current_animal_id: PropTypes.string,
+        today_recorded: PropTypes.number,
+        collection: PropTypes.object,
+        rip: PropTypes.object,
+        score: PropTypes.object,
+        status: PropTypes.string,
+        create_date: PropTypes.instanceOf(firestore.Timestamp),
+        create_animal: PropTypes.func
     }
     
     constructor(props){
@@ -44,12 +42,12 @@ export default class Landing extends React.Component{
                     <p id='think'>想不到開心的事嗎？</p>
                     {/* <button onClick={this.props.foo_update}>foo update</button> */}
                     <a href="/other_happy">看看別人因為什麼感到開心...</a>
-                    {this.props.cannewanimal ? <CreateAni/>: <EggHero/>}
-                    <TdRcCount count={this.props.dailynote}/>
-                    <div className="d-flex justify-content-center"><PostModal/></div>
+                    {this.props.status === 'new_egg' ? <CreateAni create_animal={this.props.create_animal}/>: <EggHero/>}
+                    <TdRcCount count={this.props.today_recorded}/>
+                    <div className="d-flex justify-content-center"><PostModal id={this.props.id}/></div>
                     
-                    <ScoreBoard todaysscore={this.props.todaysscore} weeklyscore={this.props.weeklyscore} 
-                    monthlyscore={this.props.monthlyscore} historyscore={this.props.historyscore}
+                    <ScoreBoard todaysscore={this.props.score.today_score} weeklyscore={this.props.score.week_score} 
+                    monthlyscore={this.props.score.month_score} historyscore={this.props.score.history_score}
                     />
                 </div>
             </div>
