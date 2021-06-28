@@ -213,6 +213,8 @@ export default class Main extends React.Component {
             path="/Collection"
             render={() => (
               <CollectionPage
+                id={this.state.auth_user_id}
+                {...this.state.auth_user_data.collection}
               />
             )}
           />

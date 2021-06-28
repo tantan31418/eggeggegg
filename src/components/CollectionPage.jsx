@@ -22,7 +22,7 @@ function RenderAniCount(props){
                     </div>
                 </div>
                 <div className='d-flex justify-content-center collect-number'>
-                    數量:<h3>{props.bear_count}</h3>
+                    數量:<h3>{props.bear}</h3>
                 </div>
             </div>
         );
@@ -36,7 +36,7 @@ function RenderAniCount(props){
                     </div>
                 </div>
                 <div className='d-flex justify-content-center collect-number'>
-                    數量:<h3>{props.cat_count}</h3>
+                    數量:<h3>{props.cat}</h3>
                 </div>
             </div>
         );
@@ -50,7 +50,7 @@ function RenderAniCount(props){
                     </div>
                 </div>
                 <div className='d-flex justify-content-center collect-number'>
-                    數量:<h3>{props.dino_count}</h3>
+                    數量:<h3>{props.dino}</h3>
                 </div>
             </div>
         );
@@ -61,8 +61,13 @@ function RenderAniCount(props){
 
 export default class CollectionPage extends React.Component{
     static propTypes = {
-        handleClose : PropTypes.func,
-        handleShow : PropTypes.func
+        // handleClose : PropTypes.func,
+        // handleShow : PropTypes.func
+        id : PropTypes.string,
+        dino : PropTypes.number,
+        cat : PropTypes.number,
+        bear : PropTypes.number
+
     }
     handleClose = () => this.setState({show: false, clicked_ani:''});
     // handleShow = () => this.setState({show: true , clicked_ani:''});
@@ -73,56 +78,30 @@ export default class CollectionPage extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            user_id: "69",//不應該寫在這裡，應該是從props傳進來
-            dino_count:0,
-            cat_count:0,
-            bear_count:1,
-            clicked_ani:''
+            // user_id: "69",//不應該寫在這裡，應該是從props傳進來
+            // dino_count:0,
+            // cat_count:0,
+            // bear_count:1,
+            clicked_ani:'',
+            show:false
 
         };
 
         
-        this.getBornAniCount = this.getBornAniCount.bind(this);
+        // this.getBornAniCount = this.getBornAniCount.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        this.handleBearClick = this.handleBearClick.bind(this);
+        this.handleCatClick = this.handleCatClick.bind(this);
+        this.handleDinoClick = this.handleDinoClick.bind(this);
     }
     componentDidMount() {
         // this.setState(...this.getUser());
 
         console.log('collection component did mount');
-        this.getBornAniCount();
+        // this.getBornAniCount();
     }
 
-    getBornAniCount(){
-        countAniFromApi(this.state.user_id,'cat','born')
-        .then(
-            (res) => {
-                console.log(res.length);
-                this.setState({
-                    cat_count:res.length
-                });
-                console.log('getborncat');
-            }
-        );
-        countAniFromApi(this.state.user_id,'dinosaur','born')
-        .then(
-            (res) => {
-                console.log(res.length);
-                this.setState({
-                    dino_count:res.length
-                });
-                console.log('getborndino');
-            }
-        );
-        countAniFromApi(this.state.user_id,'dog','born')
-        .then(
-            (res) => {
-                console.log(res.length);
-                this.setState({
-                    bear_count:res.length
-                });
-                console.log('getbornbear');
-            }
-        );
-    }
+    
     
     
 
@@ -136,15 +115,15 @@ export default class CollectionPage extends React.Component{
                 <div className='d-flex row'>
                     <div className='d-flex col-12  col-lg-6 table justify-content-center'>
                         <span>
-                            <img id='ani-1' /*style={this.state.bear_count?{}:{display:'none'}}*/ src='ani_bear.png' onClick={this.handleBearClick}/>
-                            <img id='ani-2' /*style={this.state.bear_count?{}:{display:'none'}}*/ src='ani_bear.png' onClick={this.handleBearClick}/>
+                            <img id='ani-1' style={this.props.bear?{}:{display:'none'}} src='ani_bear.png' onClick={this.handleBearClick}/>
+                            <img id='ani-2' style={this.props.bear?{}:{display:'none'}} src='ani_bear.png' onClick={this.handleBearClick}/>
                         </span>                        
                         <img src='Table-1.png'/>
                     </div>
                     <div className='d-flex col-12 col-lg-6 table justify-content-center'>
                         <span>
-                            <img id='ani-1' /*style={this.state.dino_count?{}:{display:'none'}}*/ src='ani_dino.png' onClick={this.handleDinoClick}/>
-                            <img id='ani-2' /*style={this.state.cat_count?{}:{display:'none'}}*/ src='ani_cat.png' onClick={this.handleCatClick}/>
+                            <img id='ani-1' style={this.props.dino?{}:{display:'none'}} src='ani_dino.png' onClick={this.handleDinoClick}/>
+                            <img id='ani-2' style={this.props.cat?{}:{display:'none'}} src='ani_cat.png' onClick={this.handleCatClick}/>
                         </span> 
                         <img src='Table-2.png'/>
                     </div>
@@ -174,7 +153,7 @@ export default class CollectionPage extends React.Component{
                                 </div>
                                 <div className='d-flex justify-content-center collect-number'> */}
                                     
-                                        <RenderAniCount {...this.state}/>
+                                        <RenderAniCount {...this.state} {...this.props}/>
                                     
                                 {/* </div> */}
                             </Modal.Body>
