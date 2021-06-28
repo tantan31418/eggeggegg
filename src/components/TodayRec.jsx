@@ -5,8 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import HomeButton from './HomeButton';
 import SleepAni from './SleepAni'
 import './TodayRec.css';
-import {list as getTdRecFromApi} from '../api/post.js';
-import {auth , firestore} from '../firebase.js';
+import {firestore} from '../firebase.js';
 import moment from 'moment';
 
 

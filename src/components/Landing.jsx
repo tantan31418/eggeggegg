@@ -9,7 +9,7 @@ import PostModal from './PostModal.jsx';
 import './Landing.css';
 
 import PropTypes from 'prop-types';
-import {auth,firestore} from '../firebase.js';
+import {firestore} from '../firebase.js';
 
 
 
