@@ -12,8 +12,9 @@ import moment from 'moment';
 export default class CalendarPage extends React.Component{
 
     static propTypes = {
-        handleClose : PropTypes.func,
-        handleShow : PropTypes.func
+        // handleClose : PropTypes.func,
+        // handleShow : PropTypes.func
+        id : PropTypes.string
     }
 
     handleClose = () => this.setState({show: false});
@@ -48,7 +49,7 @@ export default class CalendarPage extends React.Component{
         let db = firestore();
         let res = [];
         db.collection('post')
-        .where('uid','==','testuser')
+        .where('uid','==',this.props.id)
         .where('create_date','>=',firestore.Timestamp.fromDate(moment(this.state.select_date).startOf('day').toDate()))
         .where('create_date','<=',firestore.Timestamp.fromDate(moment(this.state.select_date).endOf('day').toDate()))
         .get().then(querySnapshot => {

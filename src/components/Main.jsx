@@ -238,7 +238,7 @@ export default class Main extends React.Component {
             exact
             path="/Calendar"
             render={() => (
-              <CalendarPage
+              <CalendarPage id={this.state.auth_user_id}
               />
             )}
           />
