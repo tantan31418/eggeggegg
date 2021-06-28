@@ -42,7 +42,10 @@ export default class Landing extends React.Component{
                     <p id='think'>想不到開心的事嗎？</p>
                     {/* <button onClick={this.props.foo_update}>foo update</button> */}
                     <a href="/other_happy">看看別人因為什麼感到開心...</a>
-                    {this.props.status === 'new_egg' ? <CreateAni create_animal={this.props.create_animal}/>: <EggHero/>}
+                    {this.props.status === 'new_egg' ? 
+                    <CreateAni create_animal={this.props.create_animal}/>
+                    :
+                     <EggHero current_animal={this.props.current_animal} status={this.props.status}/>}
                     <TdRcCount count={this.props.today_recorded}/>
                     <div className="d-flex justify-content-center"><PostModal id={this.props.id}/></div>
                     
