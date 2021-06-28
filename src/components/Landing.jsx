@@ -25,7 +25,6 @@ export default class Landing extends React.Component{
         dailynote:PropTypes.number,
         today_3_things:PropTypes.array,//task='others'/mypost  userid ts
         cannewanimal:PropTypes.number,
-        foo_update:PropTypes.func
         
     
     }
