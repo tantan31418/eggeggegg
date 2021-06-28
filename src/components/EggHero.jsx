@@ -18,23 +18,33 @@ export default class EggHero extends React.Component{
 
     render(){
         return (
-        <div>
+        <div className='egghero'>
             <Link to="/today_rec">
                     {this.props.status === 'breed'
                         ?
-                        <img src={`egghero_backed.png`} />
+                        <div className='d-flex justify-content-center'>
+                            <img src={`egghero_backed.png`} />
+                        </div>
                         :
                         this.props.status === 'born'
                             ?
-                            (this.props.current_animal === 'dino') ? <img alt='born dino' src='ani_dino.png' />
-                                : (this.props.current_animal === 'cat') ? <img alt='born cat' src='ani_cat.png' />
-                                    : (this.props.current_animal === 'bear') ? <img alt='born bear' src='ani_bear.png' />
+                            (this.props.current_animal === 'dino') ? <div className='d-flex justify-content-center'><img id='born-dino' alt='born dino' src='ani_dino.png' /></div>
+                                : (this.props.current_animal === 'cat') ? <div className='d-flex justify-content-center'><img id='born-cat' alt='born cat' src='ani_cat.png' /></div>
+                                    : (this.props.current_animal === 'bear') ? <div className='d-flex justify-content-center'><img id='born-bear' alt='born bear' src='ani_bear.png' /></div>
                                         : <img alt='error' />
                             :
-                            (this.props.current_animal === 'dino') ? <img alt='dead dino' src='' />
-                                : (this.props.current_animal === 'cat') ? <img alt='dead cat' src='' />
-                                    : (this.props.current_animal === 'bear') ? <img alt='dead bear' src='' />
-                                        : <img alt='error' />
+                            <div>
+                                <div className='d-flex justify-content-center'>
+                                    <img id='angel' alt='error' src='angel.png'/>
+                                </div>
+                                <div className='d-flex justify-content-center'>
+                                    <img id='broken-egg' alt='error' src='broken_egg.png'/>
+                                </div>
+                            </div>
+                            // (this.props.current_animal === 'dino') ? <img alt='dead dino' src='' />
+                            //     : (this.props.current_animal === 'cat') ? <img alt='dead cat' src='' />
+                            //         : (this.props.current_animal === 'bear') ? <img alt='dead bear' src='' />
+                            //             : <img alt='error' />
                     }
             </Link>
         </div>

@@ -14,18 +14,25 @@
     border-style: solid; */
     z-index: 0;
 }
-#ani-1 {
+#collect-bear {
     position: relative;
     left: 6rem;
     margin-right: -20rem;
-    margin-top: -1.1rem;
+    margin-top: -1.6rem;
     z-index: 1;
 }
-#ani-2 {
+#collect-dino {
+    position: relative;
+    left: 6rem;
+    margin-right: -20rem;
+    margin-top: -2.1rem;
+    z-index: 1;
+}
+#collect-cat {
     position: relative;
     left: 30rem;
     /* margin-right: -20rem;*/
-    margin-top: -1.1rem; 
+    margin-top: -1.7rem; 
     z-index: 1;
 }
 .collect-border {

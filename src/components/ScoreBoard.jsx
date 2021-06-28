@@ -29,7 +29,7 @@ export default class ScoreBoard extends React.Component{
             <div className="d-flex justify-content-center scoreboard">
                 <p>本月累積的快樂分數&nbsp;<span>{this.props.monthlyscore}</span></p>
             </div>
-            <div className="d-flex justify-content-center scoreboard">
+            <div className="d-flex justify-content-center scoreboard" style={{marginBottom:50}}>
                 <p>有史以來累積的快樂分數&nbsp;<span>{this.props.historyscore}</span></p>
             </div>
         </div>
