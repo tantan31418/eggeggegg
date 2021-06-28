@@ -31,12 +31,13 @@ export default class TodayRec extends React.Component {
     componentDidMount(){
         this.getTdRec();
     }
+    //component Will Unmount => manage memory
 
     getTdRec(){
         let db = firestore();
         let res = [];
         db.collection('post')
-        .where('uid','==','testuser')
+        .where('uid','==',this.props.id)
         .where('create_date','>=',firestore.Timestamp.fromDate(moment().startOf('day').toDate()))
         .get().then(querySnapshot => {
             querySnapshot.forEach(doc => {

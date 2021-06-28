@@ -31,6 +31,7 @@ export default class PostModal extends React.Component{
     static propTypes = {
         // handleClose : PropTypes.func,
         // handleShow : PropTypes.func
+        id: PropTypes.string
     }
     
     constructor(props){
@@ -62,10 +63,10 @@ export default class PostModal extends React.Component{
 
     handleSubmit = () => {
         let db = firestore();
-        db.collection("post").doc("fakepost3").set({
+        db.collection("post").add({
             content:this.state.formValue.textarea,
             score:this.state.formValue.happiness,
-            uid:'testuser',
+            uid:this.props.id,
             create_date:firestore.FieldValue.serverTimestamp() 
         }, { merge: true }).then(this.handleClose());
     }
