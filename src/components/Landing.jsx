@@ -53,6 +53,9 @@ export default class Landing extends React.Component{
                         <PostModal id={this.props.id} 
                         today_recorded={this.props.today_recorded}
                         updateUser={this.props.updateUser}
+                        cur_ani_create_date={this.props.cur_ani_create_date}
+                        user_status={this.props.status}
+                        current_animal={this.props.current_animal}
                         />
                     </div>
                     

@@ -33,7 +33,10 @@ export default class PostModal extends React.Component{
         // handleShow : PropTypes.func
         id: PropTypes.string,
         today_recorded : PropTypes.number,
-        updateUser : PropTypes.func
+        updateUser : PropTypes.func,
+        cur_ani_create_date:PropTypes.instanceOf(firestore.Timestamp),
+        user_status:PropTypes.string,
+        current_animal:PropTypes.string
     }
     
     constructor(props){
@@ -49,7 +52,7 @@ export default class PostModal extends React.Component{
         this.handleClose = this.handleClose.bind(this);
         this.handleShow = this.handleShow.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // db = firestore();
+        this.checkBreedStatus = this.checkBreedStatus.bind(this);
     }
     
 
@@ -78,12 +81,39 @@ export default class PostModal extends React.Component{
                 },{merge:true}).then(
                     ()=>{
                         this.props.updateUser();
+                        this.checkBreedStatus();
                         this.handleClose();
                     }
                     
                     )
             }
         );
+    }
+
+    checkBreedStatus = () => {
+        console.log('call check breed status');
+        const dino_breed_time = 1;
+        const cat_breed_time = 0;
+        const bear_breed_time = 0;
+        let breed_time = (
+            (this.props.current_animal === 'dino') ? dino_breed_time :
+                (this.props.current_animal === 'cat') ? cat_breed_time :
+                    (this.props.current_animal === 'bear') ? bear_breed_time : null
+        );
+        if (this.props.today_recorded >= 2 && this.props.user_status === 'breed'){
+            // let start_date = moment(firestore.Timestamp.toDate(this.props.cur_ani_create_date));\
+            let start_date = moment(this.props.cur_ani_create_date.toDate()).startOf('day');
+            let now_date = moment().startOf('day');
+            let dura_days = now_date.diff(start_date,'days');
+            console.log(dura_days);
+            if (dura_days >= breed_time){
+                // breed success
+                console.log('breed success');
+            }
+            else {
+                console.log('not yet');
+            }
+        }
     }
     
 
