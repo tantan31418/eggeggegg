@@ -62,6 +62,13 @@ export default class CalendarPage extends React.Component{
             for (let i=res.length;i<3;i++){
                 res.push({content:'',score:0});
             }
+            res.sort(function(a,b){
+                let key_a = a.score;
+                let key_b = b.score;
+                if (key_a < key_b) return 1;
+                if (key_a > key_b) return -1;
+                return 0;
+            });
             this.setState({show_posts:res},
                 this.handleShow
             );

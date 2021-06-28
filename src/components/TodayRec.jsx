@@ -66,63 +66,64 @@ export default class TodayRec extends React.Component {
         return (
             <div>
                 {/* TodayRec */}
-                <HomeButton/>
+                <HomeButton />
+                {this.props.current_animal === 'cat' ? <div className='d-flex justify-content-center'><SleepAni current_animal={this.props.current_animal} /></div> : null}
                 <div className='d-flex justify-content-center'>
                     <div className='out-border d-flex justify-content-center align-items-center'>
-                    {/* <span className='inner-border'></span> */}
-                <div className='carousel'>
-                <Carousel>
-                    <Carousel.Item interval={10000}>
-                        <img
-                            className="d-block h-3 item"
-                            src="1.jpg"
-                            alt="First slide"
-                        />
-                        <Carousel.Caption>
-                            {/* <h6>First slide label</h6> */}
-                            {/* <p>放暑假~</p> */}
-                            <p>{this.state.td_3_things[0].content}</p>
-                            <p>快樂分數:{this.state.td_3_things[0].score}</p>
-                            {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
-                        </Carousel.Caption>
-                    </Carousel.Item>
+                        {/* <span className='inner-border'></span> */}
+                        <div className='carousel'>
+                            <Carousel>
+                                <Carousel.Item interval={10000}>
+                                    <img
+                                        className="d-block h-3 item"
+                                        src="1.jpg"
+                                        alt="First slide"
+                                    />
+                                    <Carousel.Caption>
+                                        {/* <h6>First slide label</h6> */}
+                                        {/* <p>放暑假~</p> */}
+                                        <p>{this.state.td_3_things[0].content}</p>
+                                        <p>快樂分數:{this.state.td_3_things[0].score}</p>
+                                        {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
+                                    </Carousel.Caption>
+                                </Carousel.Item>
 
-                    <Carousel.Item interval={10000}>
-                        <img
-                            className="d-block h-3 item"
-                            src="2.jpg"
-                            alt="Second slide"
-                        />
+                                <Carousel.Item interval={10000}>
+                                    <img
+                                        className="d-block h-3 item"
+                                        src="2.jpg"
+                                        alt="Second slide"
+                                    />
 
-                        <Carousel.Caption>
-                            {/* <h6>Second slide label</h6> */}
-                            {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
-                            <p>{this.state.td_3_things[1].content}</p>
-                            <p>快樂分數:{this.state.td_3_things[1].score}</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
+                                    <Carousel.Caption>
+                                        {/* <h6>Second slide label</h6> */}
+                                        {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
+                                        <p>{this.state.td_3_things[1].content}</p>
+                                        <p>快樂分數:{this.state.td_3_things[1].score}</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
 
-                    <Carousel.Item interval={10000}>
-                        <img
-                            className="d-block h-3 item"
-                            src="3.jpg"
-                            alt="Third slide"
-                        />
+                                <Carousel.Item interval={10000}>
+                                    <img
+                                        className="d-block h-3 item"
+                                        src="3.jpg"
+                                        alt="Third slide"
+                                    />
 
-                        <Carousel.Caption>
-                            {/* <h6>Third slide label</h6> */}
-                            {/* <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
-                            <p>{this.state.td_3_things[2].content}</p>
-                            <p>快樂分數:{this.state.td_3_things[2].score}</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    
-                </Carousel>
+                                    <Carousel.Caption>
+                                        {/* <h6>Third slide label</h6> */}
+                                        {/* <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
+                                        <p>{this.state.td_3_things[2].content}</p>
+                                        <p>快樂分數:{this.state.td_3_things[2].score}</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+
+                            </Carousel>
+                        </div>
+                    </div> {/*out border*/}
+
                 </div>
-                </div> {/*out border*/}
-                
-                </div>
-                <div className='d-flex justify-content-center'><SleepAni current_animal={this.props.current_animal}/></div>
+                {this.props.current_animal === 'cat' ? null : <div className='d-flex justify-content-center'><SleepAni current_animal={this.props.current_animal} /></div>}
             </div>
         );
     }
