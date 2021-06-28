@@ -85,7 +85,7 @@ export default class KillButton extends React.Component{
                                     : this.props.user_status === 'new_egg' ? <p>還沒有選擇動物，快去選擇吧！</p> : null
                         }</div>
                         {this.props.user_status === 'breed' ? 
-                        <div className="d-flex justify-content-center sleepani"><SleepAni current_animal={this.props.current_animal} /></div>
+                        <div className="d-flex justify-content-center sleepani" style={{height:250}}><SleepAni current_animal={this.props.current_animal} /></div>
                         : null
                     }
                         

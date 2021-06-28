@@ -48,7 +48,7 @@
     position: relative;
     left: 1rem;
     right: auto;
-    
+    /* top: 2rem; */
 }
 .collect-border img {
     height:auto;

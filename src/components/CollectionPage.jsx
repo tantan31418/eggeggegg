@@ -26,7 +26,7 @@ function RenderAniCount(props){
             <div>
                 <div className='d-flex justify-content-center'>
                     <div className='collect-border'>
-                        <span><img src='ani_bear.png' /></span>
+                        <span style={{top:30}}><img src='ani_bear.png' /></span>
                     </div>
                 </div>
                 <div className='d-flex justify-content-center collect-number'>
@@ -40,7 +40,7 @@ function RenderAniCount(props){
             <div>
                 <div className='d-flex justify-content-center'>
                     <div className='collect-border'>
-                        <span><img src='ani_cat.png' /></span>
+                        <span style={{top:30}}><img src='ani_cat.png' /></span>
                     </div>
                 </div>
                 <div className='d-flex justify-content-center collect-number'>
@@ -54,7 +54,7 @@ function RenderAniCount(props){
             <div>
                 <div className='d-flex justify-content-center'>
                     <div className='collect-border'>
-                        <span><img src='ani_dino.png' /></span>
+                        <span style={{top:80}}><img src='ani_dino.png' /></span>
                     </div>
                 </div>
                 <div className='d-flex justify-content-center collect-number'>
