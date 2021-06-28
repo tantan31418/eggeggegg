@@ -1,7 +1,6 @@
 import React from 'react';
-// import { Button, Modal ,Form} from 'rsuite';
 import {Button, Modal, Form, FormGroup, FormControl, ControlLabel, HelpBlock } from 'rsuite';
-import { Slider, RangeSlider } from 'rsuite';
+import { Slider } from 'rsuite';
 import PropTypes from 'prop-types';
 import './PostModal.css';
 import {firestore} from '../firebase.js';
@@ -29,14 +28,14 @@ class CustomField extends React.PureComponent {
 export default class PostModal extends React.Component{
 
     static propTypes = {
-        // handleClose : PropTypes.func,
-        // handleShow : PropTypes.func
         id: PropTypes.string,
         today_recorded : PropTypes.number,
         updateUser : PropTypes.func,
         cur_ani_create_date:PropTypes.instanceOf(firestore.Timestamp),
         user_status:PropTypes.string,
-        current_animal:PropTypes.string
+        current_animal:PropTypes.string,
+        collection:PropTypes.object,
+        current_animal_id:PropTypes.string
     }
     
     constructor(props){
@@ -80,9 +79,9 @@ export default class PostModal extends React.Component{
                     today_recorded: this.props.today_recorded + 1
                 },{merge:true}).then(
                     ()=>{
-                        this.props.updateUser();
+                        // this.props.updateUser();
                         this.checkBreedStatus();
-                        this.handleClose();
+                        // this.handleClose();
                     }
                     
                     )
@@ -92,7 +91,8 @@ export default class PostModal extends React.Component{
 
     checkBreedStatus = () => {
         console.log('call check breed status');
-        const dino_breed_time = 1;
+        let db = firestore();
+        const dino_breed_time = 0;
         const cat_breed_time = 0;
         const bear_breed_time = 0;
         let breed_time = (
@@ -109,10 +109,48 @@ export default class PostModal extends React.Component{
             if (dura_days >= breed_time){
                 // breed success
                 console.log('breed success');
+                // update backend
+                let new_collection = this.props.collection;
+                switch (this.props.current_animal) {
+                    case 'dino':
+                        new_collection.dino += 1;
+                        break;
+                    case 'cat':
+                        new_collection.cat += 1;
+                        break;
+                    case 'bear':
+                        new_collection.bear += 1;
+                        break;
+                    default:
+                        break;
+                }
+                
+                db.collection('user').doc(this.props.id).set({
+                    status: 'born',
+                    collection : new_collection
+                },{merge : true}).then(
+                    db.collection('animal').doc(this.props.current_animal_id).set({
+                        animal_status: 'born'
+                    },{ merge : true}).then(
+                        //update frontend, close
+                        () => {
+                            this.props.updateUser();
+                            this.handleClose();
+                        }
+                        
+                    )
+                )
             }
             else {
                 console.log('not yet');
+                this.props.updateUser();
+                this.handleClose();
             }
+        }
+        else {
+            console.log('dead or already born');
+            this.props.updateUser();
+            this.handleClose();
         }
     }
     

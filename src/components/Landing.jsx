@@ -56,6 +56,8 @@ export default class Landing extends React.Component{
                         cur_ani_create_date={this.props.cur_ani_create_date}
                         user_status={this.props.status}
                         current_animal={this.props.current_animal}
+                        collection={this.props.collection}
+                        current_animal_id={this.props.current_animal_id}
                         />
                     </div>
                     
