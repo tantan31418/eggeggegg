@@ -67,7 +67,7 @@ export default class TodayRec extends React.Component {
             <div>
                 {/* TodayRec */}
                 <HomeButton />
-                {this.props.current_animal === 'cat' ? <div className='d-flex justify-content-center'><SleepAni current_animal={this.props.current_animal} /></div> : null}
+                {/* {this.props.current_animal === 'cat' ? <div className='d-flex justify-content-center'><SleepAni current_animal={this.props.current_animal} /></div> : null} */}
                 <div className='d-flex justify-content-center'>
                     <div className='out-border d-flex justify-content-center align-items-center'>
                         {/* <span className='inner-border'></span> */}
@@ -123,7 +123,7 @@ export default class TodayRec extends React.Component {
                     </div> {/*out border*/}
 
                 </div>
-                {this.props.current_animal === 'cat' ? null : <div className='d-flex justify-content-center'><SleepAni current_animal={this.props.current_animal} /></div>}
+                {/*this.props.current_animal === 'cat' ? null :*/ <div className='d-flex justify-content-center'><SleepAni current_animal={this.props.current_animal} /></div>}
             </div>
         );
     }

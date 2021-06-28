@@ -51,7 +51,7 @@ export default class OtherEggs extends React.Component{
     
     render(){
         return (
-            <div className='d-flex justify-content-center'>
+            <div className='d-flex justify-content-center' style={{marginTop:30}}>
                 <div className='d-flex row'>
                     <OtherEgg happyText={this.state.otherPosts[0].content}/>
                     <OtherEgg happyText={this.state.otherPosts[1].content}/>
