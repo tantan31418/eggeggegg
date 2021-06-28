@@ -1,0 +1,24 @@
+#logout-botton{
+    background:rgb(117, 135, 151);
+    border: none;
+    color: white;
+    box-shadow: -6px 6px 0 hsl(60, 1%, 30%);
+}
+#logout-botton::before {
+    border-right: 6px solid hsl(60, 1%, 30%);
+}
+
+#logout-botton::after {
+    border-top: 6px solid hsl(60, 1%, 30%);
+}
+#logout-botton:active {
+    background: rgb(95, 109, 122);
+    box-shadow: -3px 3px 0 hsl(60, 1%, 30%);
+}
+#logout-botton:active::before {
+    border-right: 3px solid hsl(60, 1%, 30%);
+}
+
+#logout-botton:active::after {
+    border-top: 3px solid hsl(60, 1%, 30%);
+}

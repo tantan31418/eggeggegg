@@ -7,9 +7,10 @@ import OtherHappy from './OtherHappy.jsx';
 import SettingPage from './SettingPage.jsx';
 import CollectionPage from './CollectionPage.jsx';
 import RIPPage from './RIPPage.jsx';
-import LoginPage from './LoginPage.jsx';
+// import LoginPage from './LoginPage.jsx';
 import CalendarPage from './CalendarPage.jsx';
 import SignIn from './SignIn.jsx';
+import './Main.css';
 
 // import {getUser as getUserFromApi} from '../api/getUser.js';
 import {list as getUserFromApi} from '../api/user.js';
@@ -141,14 +142,14 @@ export default class Main extends React.Component {
               />
             )}
           />
-          <Route
+          {/* <Route
             exact
             path="/login"
             render={() => (
               <LoginPage
               />
             )}
-          />
+          /> */}
           <Route
             exact
             path="/Calendar"
