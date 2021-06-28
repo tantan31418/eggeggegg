@@ -167,9 +167,13 @@ export default class PostModal extends React.Component{
         return (
         <div>
                 <div className='blank-top'></div>
-                <Button className="record_a" onClick={this.handleShow}>
-                    <div>記錄一件開心的事吧！</div>
-                </Button>
+                {this.props.user_status === 'breed' ?
+                    <Button className="record_a" onClick={this.handleShow}>
+                        <div>記錄一件開心的事吧！</div>
+                    </Button>
+                    :
+                    <h3>明天再來記錄吧！</h3>}
+
                 <div className='blank-down'></div>
 
                 <Modal  show={this.state.show} onHide={this.handleClose} size="sm">

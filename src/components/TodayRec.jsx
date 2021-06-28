@@ -43,7 +43,7 @@ export default class TodayRec extends React.Component {
         .orderBy('create_date')
         .orderBy('score','desc')
         .get().then(querySnapshot => {
-            console.log(querySnapshot.docs.data);
+            console.log(querySnapshot.docs);
             querySnapshot.docs.sort(function(a,b){
                 let key_a = a.data().score;
                 let key_b = b.data().score;

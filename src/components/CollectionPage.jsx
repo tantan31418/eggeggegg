@@ -8,7 +8,16 @@ import { Modal } from 'rsuite';
 function RenderAniCount(props){
     if(props.clicked_ani === ''){
         return (
-            null
+            <div>
+                <div className='d-flex justify-content-center'>
+                    <div className='collect-border'>
+                        
+                    </div>
+                </div>
+                <div className='d-flex justify-content-center collect-number'>
+                    
+                </div>
+            </div>
         );
     }
     else{

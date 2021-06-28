@@ -1,5 +1,6 @@
 import React from 'react';
 import './SleepAni.css';
+import PropTypes from 'prop-types';
 
 export default class SleepAni extends React.Component{
     static propTypes = {
