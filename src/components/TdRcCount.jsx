@@ -15,9 +15,11 @@ export default class TdRcCount extends React.Component{
     
     render(){
         return (
-        <div className='count d-flex justify-content-center'>
-            <p><span>{this.props.count}</span><span>/3</span></p>
-        </div>
+            <div className='count d-flex justify-content-center'>
+                <p><span
+                    style={this.props.count < 3 ? { color: 'red' } : { color: 'green' }}>
+                    {this.props.count}</span><span>/3</span></p>
+            </div>
         );
     }
 }

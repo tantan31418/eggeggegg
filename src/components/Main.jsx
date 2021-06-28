@@ -19,24 +19,7 @@ export default class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      authenticated: false,
-      user_id : "1",
-      user_data : {
-        
-          "id": '66',
-          "name": "hello",
-          "current_animal": "dino",
-          "createday":'1624357600',
-          "todaysscore":10,
-          "weeklyscore":90,
-          "monthlyscore":990,
-          "historyscore":22220,
-          "dailynote":3,
-          "today_3_things":[1,2,3],
-          "cannewanimal":0
-      
-
-      }
+      authenticated: false
     };
 
     // getUser();
@@ -197,7 +180,7 @@ export default class Main extends React.Component {
             exact
             path="/other_happy"
             render={() => (
-              <OtherHappy id={this.state.user_data.id}
+              <OtherHappy
               />
             )}
           />

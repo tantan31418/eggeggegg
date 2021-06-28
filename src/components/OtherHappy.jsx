@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 export default class OtherHappy extends React.Component{
 
     static propTypes = {
-        id: PropTypes.string
+        
     }
 
     

@@ -1,6 +1,7 @@
 import React from 'react';
 import OtherEgg from './OtherEgg';
 import PropTypes from 'prop-types';
+import { firestore } from '../firebase.js';
 
 import {list as getOtherHappyFromApi} from '../api/post.js';
 
@@ -8,7 +9,7 @@ import {list as getOtherHappyFromApi} from '../api/post.js';
 
 export default class OtherEggs extends React.Component{
     static propTypes = {
-        id: PropTypes.number
+        
         
     }
 
@@ -17,12 +18,12 @@ export default class OtherEggs extends React.Component{
         this.state = {
             show:false,
             otherPosts:[
-                {text:'foo'},
-                {text:'foo'},
-                {text:'foo'},
-                {text:'foo'},
-                {text:'foo'},
-                {text:'foo'}
+                {content:'foo'},
+                {content:'foo'},
+                {content:'foo'},
+                {content:'foo'},
+                {content:'foo'},
+                {content:'foo'}
             ]
         };
         this.getHappy = this.getHappy.bind(this);
@@ -33,27 +34,31 @@ export default class OtherEggs extends React.Component{
     }
 
     getHappy(){
-        getOtherHappyFromApi(this.props.id,'others')
-        .then(
-            (res) => {
-                console.log(res);
-                console.log(res[0].text);
-                this.setState({otherPosts:res});
-                console.log(this.state.otherPosts[0].text);
-            }
-        )
+        let db = firestore();
+        let res = [];
+        db.collection('redacted_post')
+        .get().then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+            //   console.log(doc.id, doc.data());
+            //   console.log(doc.data());
+              res.push(doc.data());
+            //   this.setState({});
+            });
+            
+            this.setState({otherPosts:res});
+          });
     }
     
     render(){
         return (
             <div className='d-flex justify-content-center'>
                 <div className='d-flex row'>
-                    <OtherEgg happyText={this.state.otherPosts[0].text}/>
-                    <OtherEgg happyText={this.state.otherPosts[1].text}/>
-                    <OtherEgg happyText={this.state.otherPosts[2].text}/>
-                    <OtherEgg happyText={this.state.otherPosts[3].text}/>
-                    <OtherEgg happyText={this.state.otherPosts[4].text}/>
-                    <OtherEgg happyText={this.state.otherPosts[5].text}/>
+                    <OtherEgg happyText={this.state.otherPosts[0].content}/>
+                    <OtherEgg happyText={this.state.otherPosts[1].content}/>
+                    <OtherEgg happyText={this.state.otherPosts[2].content}/>
+                    <OtherEgg happyText={this.state.otherPosts[3].content}/>
+                    <OtherEgg happyText={this.state.otherPosts[4].content}/>
+                    <OtherEgg happyText={this.state.otherPosts[5].content}/>
                 </div>
             </div>
         );
