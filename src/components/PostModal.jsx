@@ -35,7 +35,8 @@ export default class PostModal extends React.Component{
         user_status:PropTypes.string,
         current_animal:PropTypes.string,
         collection:PropTypes.object,
-        current_animal_id:PropTypes.string
+        current_animal_id:PropTypes.string,
+        score:PropTypes.object
     }
     
     constructor(props){
@@ -75,8 +76,14 @@ export default class PostModal extends React.Component{
         }, { merge: true })
         .then(
             () => {
+                let new_score = this.props.score;
+                new_score.today_score += this.state.formValue.happiness;
+                new_score.month_score += this.state.formValue.happiness;
+                new_score.week_score += this.state.formValue.happiness;
+                new_score.history_score += this.state.formValue.happiness;
                 db.collection('user').doc(this.props.id).set({
-                    today_recorded: this.props.today_recorded + 1
+                    today_recorded: this.props.today_recorded + 1,
+                    score: new_score
                 },{merge:true}).then(
                     ()=>{
                         // this.props.updateUser();

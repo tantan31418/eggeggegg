@@ -58,6 +58,7 @@ export default class Landing extends React.Component{
                         current_animal={this.props.current_animal}
                         collection={this.props.collection}
                         current_animal_id={this.props.current_animal_id}
+                        score={this.props.score}
                         />
                     </div>
                     
