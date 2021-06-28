@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { signInWithGoogle } from '../firebase.js';
+import './SignIn.css';
 
 export default class SignIn extends Component {
 
@@ -26,16 +27,21 @@ export default class SignIn extends Component {
     
     render() {
         return (
-            <div>
-                
-                   
-                        Sign Up to
-                        <Link to="/">Egg</Link>
-                    
-                        <button onClick={this.googleSignIn} type="button">
-                            Sign up with Google
+            
+            <div className="container d-flex h-100" >
+                <div className="align-self-center w-100" style={{paddingBottom:90}}>
+                    <div className="d-flex col-9 justify-content-center mx-auto" style={{marginTop:50}}>
+                        <div className="d-inline-flex"><h1>\ Welcome to Happy Monster /</h1></div>
+                    </div>
+                    <div className="d-flex justify-content-center col-6 mx-auto button-wrapper">
+                        <img src='egghero_backed.png' style={{marginTop:50 }}/>
+                    </div>
+                    <div className="d-flex justify-content-center col-6 mx-auto button-wrapper">
+                        <button className="button-log-in" onClick={this.googleSignIn}>
+                            Log in with Google
                         </button>
-                
+                    </div>
+                </div>
             </div>
         )
     }
