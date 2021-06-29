@@ -132,7 +132,9 @@ export default class Main extends React.Component {
                     cur_ani_create_date:doc.data().ani_create_date,
                     status: "breed"
                   }, { merge: true }).then(
-                    this.getUser()
+                    ()=>{
+                    this.getUser();
+                    }
                     //update frontend user
                   )
               })
