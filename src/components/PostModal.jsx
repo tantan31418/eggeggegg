@@ -155,7 +155,7 @@ export default class PostModal extends React.Component{
             }
         }
         else {
-            console.log('dead or already born');
+            console.log('today havent record 3 or dead or already born');
             this.props.updateUser();
             this.handleClose();
         }
