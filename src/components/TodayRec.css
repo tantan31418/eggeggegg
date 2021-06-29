@@ -47,7 +47,7 @@
     /* position: relative; */
     margin-top: auto;
 }
-#breed-day {
+.breed-day p {
     font-weight: 600;
     font-family: 'Microsoft YaHei','SimSun', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom: 2rem;
