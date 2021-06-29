@@ -61,6 +61,13 @@
     margin-top: 0.4rem;
     /* margin-left: -1rem; */
 }
+.collect-number h3{
+    color: rgb(30, 67, 97);
+    font-size: 1.8rem;
+    font-family: "Microsoft YaHei","黑體","宋體",sans-serif;
+    /* margin-top: 0.4rem; */
+    /* margin-left: -1rem; */
+}
 .rs-modal-wrapper {
     position: absolute;
 

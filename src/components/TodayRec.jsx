@@ -146,7 +146,7 @@ export default class TodayRec extends React.Component {
                 </div>
                 {/*this.props.current_animal === 'cat' ? null :*/ <div className='d-flex justify-content-center'><SleepAni current_animal={this.props.current_animal} /></div>}
                 <div className='d-flex justify-content-center'>
-                    {this.props.user_status === 'breed' ? <p>距離孵化還有&nbsp;<span>{this.state.days_until_born}</span>天</p>
+                    {this.props.user_status === 'breed' ? <p id='breed-day'>距離孵化還有&nbsp;<span>{this.state.days_until_born}</span>天</p>
                         :  this.props.user_status === 'born' ? <p>已經孵化成功～</p>
                         :  this.props.user_status === 'dead' ? <p>您敲碎了這顆蛋QQ</p>
                         : null
